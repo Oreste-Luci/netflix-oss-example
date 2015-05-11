@@ -1,6 +1,13 @@
 server:
   port: 0
 
+spring:
+  profiles:
+    active: native
+
+#management:
+#  context-path: /manage
+
 eureka:
   client:
     registerWithEureka: true
@@ -14,3 +21,16 @@ eureka:
     metadataMap:
       hostname: ${vcap.application.application_uris[0]}
       instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${random.value}}}
+
+ribbon:
+  eureka:
+   enabled: true
+
+service-b:
+    ribbon:
+      MaxAutoRetries: 1
+      MaxAutoRetriesNextServer: 1
+      OkToRetryOnAllOperations: true
+      ServerListRefreshInterval: 2000
+      NIWSServerListClassName: com.netflix.niws.loadbalancer.DiscoveryEnabledNIWSServerList
+      #DeploymentContextBasedVipAddresses: user.dev.microservice.sokolenko.me

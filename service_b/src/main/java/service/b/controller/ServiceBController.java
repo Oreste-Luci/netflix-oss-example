@@ -1,11 +1,10 @@
 package service.b.controller;
 
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import service.b.bean.MessageBean;
+
+import java.util.concurrent.atomic.AtomicLong;
 
 /**
  * @author Oreste Luci
@@ -13,18 +12,24 @@ import service.b.bean.MessageBean;
 @RestController
 public class ServiceBController {
 
+    private final AtomicLong counter = new AtomicLong();
+
     @RequestMapping(value = "/test")
     public @ResponseBody String test() {
         return "Service B";
     }
 
-
     @RequestMapping(
-            value = "/message",
+            value = "/echo",
             method= RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public MessageBean message() {
-        return new MessageBean("Hello");
+    public MessageBean echo(@RequestParam(value="msg", required=false, defaultValue="Hello") String msg) {
+
+        System.out.println(counter.incrementAndGet() + ". ServiceBController.echo: " + msg);
+
+        MessageBean messageBean = new MessageBean(msg);
+
+        return messageBean;
     }
 }

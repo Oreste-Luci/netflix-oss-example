@@ -7,7 +7,7 @@ public class MessageBean {
 
     private String message;
 
-    public MessageBean(String message) {
+    public void setMessage(String message) {
         this.message = message;
     }
 
@@ -15,4 +15,7 @@ public class MessageBean {
         return message;
     }
 
+    public String toString() {
+        return message;
+    }
 }

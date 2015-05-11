@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: config-service
+  profiles:
+    active: native
+  cloud:
+    config:
+      server:
+        git:
+          uri: file:..
+#          uri: file:../src/main/config_files/

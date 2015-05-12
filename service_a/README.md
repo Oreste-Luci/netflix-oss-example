@@ -36,10 +36,10 @@ The service has the following endpoints:
 |Endpoint        |Purpose        |
 |----------------|---------------|
 |/test           |Just to check if the service is up|
-|/discoveryClient|  |
-|/restTemplate   |  |
-|/restTemplate2  |  |
-|/feign          |  |
+|/discoveryClient|It returns a list of Service B instances obtained with DiscoveryClient which in turns obtains them from Eureka  |
+|/restTemplate   |Uses RestTemplate to send the message to service B  |
+|/restTemplate2  |Another way to use RestTemplate to send a message to service B  |
+|/feign          |Uses feign to send a message service B  |
 
 
 ##Testing the setup

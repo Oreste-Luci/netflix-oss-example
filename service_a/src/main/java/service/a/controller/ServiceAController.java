@@ -9,6 +9,8 @@ import service.a.service.DiscoveryClientService;
 import service.a.service.FeignService;
 import service.a.service.RestTemplateService;
 
+import java.util.List;
+
 /**
  * @author Oreste Luci
  */
@@ -30,15 +32,14 @@ public class ServiceAController {
     }
 
     @RequestMapping(value = "/discoveryClient")
-    public @ResponseBody String discoveryClient() {
-        discoveryClientService.discoveryClient();
-        return "OK";
+    public @ResponseBody
+    List<String> discoveryClient() {
+        return discoveryClientService.discoveryClient();
     }
 
     @RequestMapping(value = "/restTemplate")
-    public @ResponseBody String restTemplate() {
-        restTemplateService.restTemplate();
-        return "OK";
+    public @ResponseBody MessageBean restTemplate() {
+        return restTemplateService.restTemplate();
     }
 
     @RequestMapping(value = "/restTemplate2")

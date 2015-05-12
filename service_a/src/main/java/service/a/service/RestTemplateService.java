@@ -24,7 +24,7 @@ public class RestTemplateService extends AbstractService {
     @Autowired
     private RestTemplate restTemplate;
 
-    public void restTemplate() {
+    public MessageBean restTemplate() {
 
         // use the "smart" Eureka-aware RestTemplate
         ResponseEntity<MessageBean> responseEntity = this.restTemplate.exchange("http://" + RestTemplateService.CLIENT_SERVICE + "/echo",
@@ -33,6 +33,8 @@ public class RestTemplateService extends AbstractService {
                         MessageBean.class);
 
         System.out.println(responseEntity.getBody().getMessage());
+
+        return responseEntity.getBody();
     }
 
     public MessageBean restTemplate2() {

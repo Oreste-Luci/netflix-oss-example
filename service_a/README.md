@@ -19,9 +19,9 @@ java -jar target/service-a.jar
 ```
 Now the micro-service should be up and running in an auto-assigned port. You can check the Eureka status page.
   
-´´´
-http://localhost:8761/
-´´´
+``
+htp://localhost:8761/
+```
 
 If you want to start the service in a specific port you can either change the configuration file and assign a port or you can pass the **server.port** argument to the jar file.
 

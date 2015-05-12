@@ -6,6 +6,6 @@ This module creates an Eureka server.
 
 To compile
 
-```shellscript
+```ShellSession
 mvn clean package
 ```

@@ -3,4 +3,4 @@
 #
 spring:
   application:
-    name: service-b
+    name: serviceB

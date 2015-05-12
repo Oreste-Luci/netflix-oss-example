@@ -10,13 +10,13 @@ import org.springframework.stereotype.Component;
  * @author Oreste Luci
  */
 @Component
-public class DiscoveryClientService {
+public class DiscoveryClientService extends AbstractService {
 
     @Autowired
     private DiscoveryClient discoveryClient;
 
     public void discoveryClient() {
-        discoveryClient.getInstances("service-b").forEach((ServiceInstance s) -> {
+        discoveryClient.getInstances(DiscoveryClientService.CLIENT_SERVICE).forEach((ServiceInstance s) -> {
             System.out.println(ToStringBuilder.reflectionToString(s));
         });
     }

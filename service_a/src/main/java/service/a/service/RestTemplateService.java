@@ -16,7 +16,7 @@ import java.util.UUID;
  * @author Oreste Luci
  */
 @Component
-public class RestTemplateService {
+public class RestTemplateService extends AbstractService {
 
     @Autowired
     private LoadBalancerClient loadBalancer;
@@ -27,7 +27,7 @@ public class RestTemplateService {
     public void restTemplate() {
 
         // use the "smart" Eureka-aware RestTemplate
-        ResponseEntity<MessageBean> responseEntity = this.restTemplate.exchange("http://service-b/echo",
+        ResponseEntity<MessageBean> responseEntity = this.restTemplate.exchange("http://" + RestTemplateService.CLIENT_SERVICE + "/echo",
                         HttpMethod.GET,
                         null,
                         MessageBean.class);
@@ -39,7 +39,7 @@ public class RestTemplateService {
 
         String uuid = UUID.randomUUID().toString();
 
-        ServiceInstance instance = loadBalancer.choose("service-b");
+        ServiceInstance instance = loadBalancer.choose(RestTemplateService.CLIENT_SERVICE);
 
         URI serviceURI = instance.getUri();
 

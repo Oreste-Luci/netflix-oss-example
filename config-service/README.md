@@ -69,8 +69,14 @@ It should return something like this:
 
 If we know query for local we should get something like this:
 
+```ShellSession
+curl http://localhost:8888/serviceA/local/master | jq '.'
+```
+
+Result:
+
 ```json
-{
+
   "name": "local",
   "label": "",
   "propertySources": [
@@ -89,4 +95,7 @@ If we know query for local we should get something like this:
   ]
 }
 ```
+
+As you can see it returns the default configuration overridden by the local configuration.
+ 
 

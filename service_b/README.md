@@ -5,6 +5,40 @@
 This is a very simple micro-service that simple echoes back the received message pre-appending a string obtained from the config repository.
 
 The purpose of this service is to server as a server to micro-service A. To test load balancing features you can instantiate this service multiple times, the auto port configuration will assign different ports.
+
+##Quick Start
+ 
+To compile:
+ 
+```ShellSession
+mvn clean package
+```
+ 
+To execute:
+ 
+```ShellSession
+java -jar target/service-b.jar
+```
+ 
+This will start the microservice B in an automatically assigned port and register it with eureka. To check if it has been successfully registered with eureka check the eureka status page:
+ 
+```
+http://localhost:8761/
+```
+ 
+To test the service you can do the following 
+ 
+```ShellSession
+curl http://localhost:63399/echo\?msg\=Hello | jq .
+```
+ 
+You should see the following output:
+ 
+```json
+{
+  "message": "From local file Hello"
+}
+```
  
 ##Configuration
 
@@ -16,39 +50,6 @@ This file contains the application name and the configuration service location.
 
 Contains the Actuator and the Eureka service configurations. 
 
-##Quick Start
-
-To compile:
-
-```ShellSession
-mvn clean package
-```
-
-To execute:
-
-```ShellSession
-java -jar target/service-b.jar
-```
-
-This will start the microservice B in an automatically assigned port and register it with eureka. To check if it has been successfully registered with eureka check the eureka status page:
-
-```
-http://localhost:8761/
-```
-
-To test the service you can do the following 
-
-```ShellSession
-curl http://localhost:63399/echo\?msg\=Hello | jq .
-```
-
-You should see the following output:
-
-```json
-{
-  "message": "From local file Hello"
-}
-```
 
 ##Reloading Configuration
 

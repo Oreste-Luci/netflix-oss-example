@@ -4,8 +4,14 @@
 
 This module creates an Eureka server.
 
-To compile
+To compile:
 
 ```ShellSession
 mvn clean package
+```
+
+To execute:
+
+```ShellSession
+java -jar target/eureka-service.jar
 ```

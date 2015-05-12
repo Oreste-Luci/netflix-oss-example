@@ -29,4 +29,18 @@ If you want to start the service in a specific port you can either change the co
 java -jar target/service-a.jar --server.port=9090
 ```
 
+##Endpoints
+
+The service has the following endpoints:
+
+|Endpoint        |Purpose        |
+|----------------|---------------|
+|/test           |Just to check if the service is up|
+|/discoveryClient|  |
+|/restTemplate   |  |
+|/restTemplate2  |  |
+|/feign          |  |
+
+
 ##Testing the setup
+

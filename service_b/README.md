@@ -2,13 +2,17 @@
 
 ##Introduction
 
-This is a very simple microservice that simple echoes back the received message pre-appending a string obtained from the config repository.
+This is a very simple micro-service that simple echoes back the received message pre-appending a string obtained from the config repository.
  
 ##Configuration
 
 ###bootstrap.yml
 
 This file contains the application name and the configuration service location.
+
+###application.yml
+
+Contains the Actuator and the Eureka service configurations. 
 
 ##Quick Start
 
@@ -24,4 +28,38 @@ To execute:
 java -jar target/service-b.jar
 ```
 
-This will start the microservice B in an automatically assigned port 
+This will start the microservice B in an automatically assigned port and register it with eureka. To check if it has been successfully registered with eureka check the eureka status page:
+
+```
+http://localhost:8761/
+```
+
+To test the service you can do the following 
+
+```ShellSession
+curl http://localhost:63399/echo\?msg\=Hello | jq .
+```
+
+You should see the following output:
+
+```json
+{
+  "message": "From local file Hello"
+}
+```
+
+##Reloading Configuration
+
+If a change is made to a configuration file in the repo, the change will not be automatically be reflected in the micro-service since it is cached. 
+To reload the configuration you must post a refresh instruction to every micro-service that reads from the configuration service.
+
+```ShellSession
+curl -X POST http://localhost:63409/manage/refresh
+```
+
+The service should reply with the changes that have been loaded.
+
+
+
+
+

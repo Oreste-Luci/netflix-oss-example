@@ -35,10 +35,22 @@ This file contains configurations for the port in which it should run, the eurek
 Once the server is running it can be queried by:
 
 ```ShellSession
+http://localhost:8888/{name}/{env}/{label}
+```
+
+Where:
+
+* **name** is the application name
+* **env** is the profile name (default by default)
+* **label** is the branch name (master by default). This is optional and can be omitted.
+
+For example:
+
+```ShellSession
 curl http://localhost:8888/serviceA/default/master | jq '.'
 ```
 
-It shoud return something like this:
+It should return something like this:
 
 ```json
 {
@@ -54,3 +66,27 @@ It shoud return something like this:
   ]
 }
 ```
+
+If we know query for local we should get something like this:
+
+```json
+{
+  "name": "local",
+  "label": "",
+  "propertySources": [
+    {
+      "name": "https://github.com/Oreste-Luci/netflix-oss-example-config-repo/serviceA-local.properties",
+      "source": {
+        "default.message": "From local file"
+      }
+    },
+    {
+      "name": "https://github.com/Oreste-Luci/netflix-oss-example-config-repo/serviceA.properties",
+      "source": {
+        "default.message": "From default file"
+      }
+    }
+  ]
+}
+```
+

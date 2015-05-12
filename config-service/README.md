@@ -17,3 +17,11 @@ To execute:
 ```ShellSession
 java -jar target/config-service.jar
 ```
+
+##Configuration
+
+###bootstrap.yml
+
+This is the first file read by the application when is run. This file contains the name of the application and where to find the configuration files.
+
+The configuration files are stored in a [git repository] (https://github.com/Oreste-Luci/netflix-oss-example-config-repo).

@@ -1,6 +1,19 @@
 server:
   port: 0
 
+#Actuator management path
+management:
+  context-path: /manage
+
+#Enabling actuator endpoints
+endpoints:
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true
+  health:
+    sensitive: false
+
 eureka:
   client:
     registerWithEureka: true

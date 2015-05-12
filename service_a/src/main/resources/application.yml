@@ -1,9 +1,11 @@
 server:
   port: 0
 
+#Actuator management path
 management:
   context-path: /manage
 
+#Enabling actuator endpoints
 endpoints:
   restart:
     enabled: true
@@ -30,11 +32,10 @@ ribbon:
   eureka:
    enabled: true
 
-service-b:
+serviceB:
     ribbon:
       MaxAutoRetries: 1
       MaxAutoRetriesNextServer: 1
       OkToRetryOnAllOperations: true
       ServerListRefreshInterval: 1000
       NIWSServerListClassName: com.netflix.niws.loadbalancer.DiscoveryEnabledNIWSServerList
-      #DeploymentContextBasedVipAddresses: user.dev.microservice.sokolenko.me

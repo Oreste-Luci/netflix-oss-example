@@ -4,3 +4,11 @@
 spring:
   application:
     name: serviceB
+  profiles:
+    active: native
+  cloud:
+    config:
+      failFast: true  # Will not start service if no config server found
+      env: default # optional
+      label: master # optional
+      uri: http://localhost:8888

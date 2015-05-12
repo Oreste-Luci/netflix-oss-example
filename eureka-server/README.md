@@ -8,7 +8,7 @@ This module creates an Eureka server to be used by the services. By default it i
 
 To compile:
 
-```ShllSession
+```ShellSession
 mvn clean package
 ```
 

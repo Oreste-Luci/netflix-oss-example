@@ -8,7 +8,7 @@ This sevice will keep the configuration to be read by the micro-services. The ob
 
 To compile:
 
-```ShllSession
+```ShellSession
 mvn clean package
 ```
 
@@ -47,7 +47,7 @@ Where:
 For example:
 
 ```ShellSession
-curl http://localhost:8888/serviceA/default/master | jq '.'
+curl http://localhost:8888/serviceB/default/master | jq '.'
 ```
 
 It should return something like this:
@@ -58,7 +58,7 @@ It should return something like this:
   "label": "",
   "propertySources": [
     {
-      "name": "https://github.com/Oreste-Luci/netflix-oss-example-config-repo/serviceA.properties",
+      "name": "https://github.com/Oreste-Luci/netflix-oss-example-config-repo/serviceB.properties",
       "source": {
         "default.message": "From default file"
       }
@@ -70,7 +70,7 @@ It should return something like this:
 If we know query for local we should get something like this:
 
 ```ShellSession
-curl http://localhost:8888/serviceA/local/master | jq '.'
+curl http://localhost:8888/serviceB/local/master | jq '.'
 ```
 
 Result:
@@ -81,13 +81,13 @@ Result:
   "label": "",
   "propertySources": [
     {
-      "name": "https://github.com/Oreste-Luci/netflix-oss-example-config-repo/serviceA-local.properties",
+      "name": "https://github.com/Oreste-Luci/netflix-oss-example-config-repo/serviceB-local.properties",
       "source": {
         "default.message": "From local file"
       }
     },
     {
-      "name": "https://github.com/Oreste-Luci/netflix-oss-example-config-repo/serviceA.properties",
+      "name": "https://github.com/Oreste-Luci/netflix-oss-example-config-repo/serviceB.properties",
       "source": {
         "default.message": "From default file"
       }

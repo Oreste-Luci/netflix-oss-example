@@ -1,5 +1,5 @@
 server:
-  port: 0
+  port: 0 #This will automatically assing a port
 
 #Actuator management path
 management:

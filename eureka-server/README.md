@@ -24,6 +24,9 @@ To open the Eureka status page:
 http://localhost:8761/
 ```
 
+Once the Eureka service is running it is ready to accept the registration of other services. This will happen automatically for all the services that are configured to register with the Eureka server.
+
+
 ##Configuration
 
 The configuration is split up in two files.

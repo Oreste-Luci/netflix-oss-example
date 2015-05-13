@@ -64,13 +64,13 @@ The service should reply with the changes that have been loaded.
 
 ##Actuator
 
-Spring Boot Actuator provides a series of endpoints to monitor and manage the service. You can find more information [here] (http://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#production-ready).
-
-In the case of Service B you can see all the environment properties by calling the env endpoint, eg:
+Spring Boot Actuator provides a series of endpoints to monitor and manage the service. In the case of Service B you can see all the environment properties by calling the env endpoint, eg:
 
 ```
 http://localhost:<replace_with_service_port>/manage/env
 ```
+
+You should see something like this.
 
 ```json
 {
@@ -211,6 +211,7 @@ http://localhost:<replace_with_service_port>/manage/env
 }
 ```
 
+You can find more about actuator and all the endpoints it has [here] (http://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#production-ready).
 
 
 

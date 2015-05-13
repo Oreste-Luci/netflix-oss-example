@@ -14,3 +14,6 @@ The example contains the following components:
 4. [Microservice A: This is the client micro-service] (https://github.com/Oreste-Luci/netflix-oss-example/tree/master/service_a)
 
 The services can be started in any other but it recommended to start them in above order.
+
+##Further Reading
+* http://projects.spring.io/spring-cloud/spring-cloud.html

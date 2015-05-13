@@ -15,6 +15,10 @@ The example contains the following components:
 
 The services can be started in any other but it recommended to start them in above order.
 
+Service A exposes endpoints that in turn call service B endpoints. For this it finds service B by using Eureka.
+
+There is further documentation for each component in the links above.
+
 ##Further Reading
 
 * [Spring Cloud] (http://projects.spring.io/spring-cloud/spring-cloud.html)

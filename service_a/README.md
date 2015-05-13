@@ -58,7 +58,7 @@ You should see a response like this one:
 
 ```
 {
-  "message": "From local file 4a3d23f9-df76-44b0-b9db-ccc00ad50c0a"
+ "message": "From local file 4a3d23f9-df76-44b0-b9db-ccc00ad50c0a"
 }
 ```
 
@@ -66,4 +66,13 @@ You should see a response like this one:
 
 Start more than one instance of service B and wait for it to be registered in Eureka (then after 30 seconds it will be obtained by Ribbon in service A).
 
-TBC
+You can call service A and you will see in the console output for services B the log from the controller as it is being served. 
+You should see a Round Robin (default Ribbon balancing algorithm) call to services B.
+
+```
+crl http://localhost:9090/feign | jq .
+```
+
+If you kill (kill -9) one of services B you will see that Feign call skips (retries with the next one) if one of the server instances is down. 
+If you do the same with the ``/restTemplate2``` call you will see an exception in the service A console output, since in this case the call is not retried to a live server.
+

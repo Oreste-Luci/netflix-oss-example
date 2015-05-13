@@ -97,8 +97,6 @@ Result:
 ```
 
 As you can see it returns the default configuration overridden by the local configuration.
- 
-##Conclusion
 
 Now you have the config server running and reading the configuration files from a git repository. When the files are updated in the repository the config service will return the new versions.
 

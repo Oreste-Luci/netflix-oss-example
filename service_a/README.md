@@ -74,5 +74,5 @@ crl http://localhost:9090/feign | jq .
 ```
 
 If you kill (kill -9) one of services B you will see that Feign call skips (retries with the next one) if one of the server instances is down. 
-If you do the same with the ``/restTemplate2``` call you will see an exception in the service A console output, since in this case the call is not retried to a live server.
+If you do the same with the ```/restTemplate2``` call you will see an exception in the service A console output, since in this case the call is not retried to a live server.
 

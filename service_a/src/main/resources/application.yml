@@ -5,6 +5,10 @@ server:
 management:
   context-path: /admin
 
+info:
+  name: "Service A"
+  description: "Client for service B"
+
 #Enabling actuator endpoints
 endpoints:
   restart:

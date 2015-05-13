@@ -16,4 +16,9 @@ The example contains the following components:
 The services can be started in any other but it recommended to start them in above order.
 
 ##Further Reading
-* http://projects.spring.io/spring-cloud/spring-cloud.html
+
+* [Spring Cloud] (http://projects.spring.io/spring-cloud/spring-cloud.html)
+* [Dynamic configuration management with Spring Cloud Config] (http://qiita.com/making@github/items/704d8e254e03c5cce546)
+* [Spring Cloud Netflix] (http://cloud.spring.io/spring-cloud-netflix/spring-cloud-netflix.html)
+* [Microservice Registration and Discovery with Spring Cloud and Netflix's Eureka] (https://spring.io/blog/2015/01/20/microservice-registration-and-discovery-with-spring-cloud-and-netflix-s-eureka)
+* [Netflix Ribbon] (https://github.com/Netflix/ribbon/wiki)

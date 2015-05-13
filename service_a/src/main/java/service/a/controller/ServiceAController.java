@@ -1,7 +1,9 @@
 package service.a.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import service.a.bean.MessageBean;
@@ -26,29 +28,49 @@ public class ServiceAController {
     @Autowired
     private FeignService feignService;
 
-    @RequestMapping(value = "/test")
-    public @ResponseBody String test() {
-        return "Service A";
+    @RequestMapping(
+            value = "/test",
+            method= RequestMethod.GET,
+            produces = MediaType.APPLICATION_JSON_VALUE
+    )
+    public MessageBean test() {
+        return new MessageBean("Service A");
     }
 
-    @RequestMapping(value = "/discoveryClient")
-    public @ResponseBody
-    List<String> discoveryClient() {
+    @RequestMapping(
+            value = "/discoveryClient",
+            method= RequestMethod.GET,
+            produces = MediaType.APPLICATION_JSON_VALUE
+    )
+    public List<String> discoveryClient() {
         return discoveryClientService.discoveryClient();
     }
 
-    @RequestMapping(value = "/restTemplate")
-    public @ResponseBody MessageBean restTemplate() {
+    @RequestMapping(
+            value = "/restTemplate",
+            method= RequestMethod.GET,
+            produces = MediaType.APPLICATION_JSON_VALUE
+    )
+    public MessageBean restTemplate() {
         return restTemplateService.restTemplate();
     }
 
-    @RequestMapping(value = "/restTemplate2")
+    @RequestMapping(
+            value = "/restTemplate2",
+            method= RequestMethod.GET,
+            produces = MediaType.APPLICATION_JSON_VALUE
+    )
     public @ResponseBody MessageBean restTemplate2() {
         return restTemplateService.restTemplate2();
     }
 
-    @RequestMapping(value = "/feign")
-    public @ResponseBody MessageBean feignClient() {
+    @RequestMapping(
+            value = "/feign",
+            method= RequestMethod.GET,
+            produces = MediaType.APPLICATION_JSON_VALUE
+    )
+    public MessageBean feignClient() {
         return feignService.feignClient();
     }
+
 }

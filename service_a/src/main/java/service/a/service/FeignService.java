@@ -27,7 +27,6 @@ public class FeignService extends AbstractService {
         return messageBean;
     }
 
-
     @FeignClient(FeignService.CLIENT_SERVICE)
     public interface ServiceBClient {
 

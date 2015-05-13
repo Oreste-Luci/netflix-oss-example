@@ -3,7 +3,7 @@ server:
 
 #Actuator management path
 management:
-  context-path: /manage
+  context-path: /admin
 
 #Enabling actuator endpoints
 endpoints:

@@ -57,7 +57,7 @@ If a change is made to a configuration file in the repo, the change will not be 
 To reload the configuration you must post a refresh instruction to every micro-service that reads from the configuration service.
 
 ```ShellSession
-curl -X POST http://localhost:63409/manage/refresh
+curl -X POST http://localhost:63409/admin/refresh
 ```
 
 The service should reply with the changes that have been loaded.
@@ -67,7 +67,7 @@ The service should reply with the changes that have been loaded.
 Spring Boot Actuator provides a series of endpoints to monitor and manage the service. In the case of Service B you can see all the environment properties by calling the env endpoint, eg:
 
 ```
-http://localhost:<replace_with_service_port>/manage/env
+http://localhost:<replace_with_service_port>/admin/env
 ```
 
 You should see something like this.

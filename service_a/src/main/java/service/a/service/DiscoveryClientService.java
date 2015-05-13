@@ -22,7 +22,7 @@ public class DiscoveryClientService extends AbstractService {
         ArrayList<String> list = new ArrayList<>();
 
         discoveryClient.getInstances(DiscoveryClientService.CLIENT_SERVICE).forEach((ServiceInstance s) -> {
-            String name = ToStringBuilder.reflectionToString(s);
+            String name = s.getServiceId() + " - " + s.getUri().toString();
             System.out.println(name);
             list.add(name);
         });

@@ -1,9 +1,10 @@
+#This will automatically assing a port
 server:
-  port: 0 #This will automatically assing a port
+  port: 0
 
 #Actuator management path
 management:
-  context-path: /manage
+  context-path: /admin
 
 #Enabling actuator endpoints
 endpoints:

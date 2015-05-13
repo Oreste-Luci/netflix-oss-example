@@ -26,3 +26,7 @@ There is further documentation for each component in the links above.
 * [Spring Cloud Netflix] (http://cloud.spring.io/spring-cloud-netflix/spring-cloud-netflix.html)
 * [Microservice Registration and Discovery with Spring Cloud and Netflix's Eureka] (https://spring.io/blog/2015/01/20/microservice-registration-and-discovery-with-spring-cloud-and-netflix-s-eureka)
 * [Netflix Ribbon] (https://github.com/Netflix/ribbon/wiki)
+
+
+> **Note:**
+> This example is using Spring Boot version 1.2.3.RELEASE and Spring Cloud version 1.0.0.RELEASE.

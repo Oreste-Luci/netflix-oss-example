@@ -17,14 +17,18 @@ import java.util.concurrent.atomic.AtomicLong;
 @RestController
 public class ServiceBController {
 
-    @Value("${default.message:ServiceB}")
+    @Value("${default.message:Service B }")
     String message;
 
     private final AtomicLong counter = new AtomicLong();
 
-    @RequestMapping(value = "/test")
-    public @ResponseBody String test() {
-        return "Service B";
+    @RequestMapping(
+            value = "/test",
+            method= RequestMethod.GET,
+            produces = MediaType.APPLICATION_JSON_VALUE
+    )
+    public MessageBean test() {
+        return new MessageBean("Service B");
     }
 
     @RequestMapping(

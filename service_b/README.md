@@ -29,7 +29,7 @@ http://localhost:8761/
 To test the service you can do the following 
  
 ```ShellSession
-curl http://localhost:63399/echo\?msg\=Hello | jq .
+curl http://localhost:<replace_with_service_port>/echo\?msg\=Hello | jq .
 ```
  
 You should see the following output:
@@ -57,7 +57,7 @@ If a change is made to a configuration file in the repo, the change will not be 
 To reload the configuration you must post a refresh instruction to every micro-service that reads from the configuration service.
 
 ```ShellSession
-curl -X POST http://localhost:63409/admin/refresh
+curl -X POST http://localhost:<replace_with_service_port>/admin/refresh
 ```
 
 The service should reply with the changes that have been loaded.

@@ -212,7 +212,7 @@ You should see something like this.
 ```
 
 Another endpoint you can call to get app info is ```/admin/info``` (in this example is admin since it was configured in the application.yml file). 
-This will display the info that has been added in the properties files server by the configuration server. This information can also be added in the ```application.yml``` file as in the case of service A.
+This will display the info that has been added in the properties files served by the configuration server. This information can also be added in the ```application.yml``` file as in the case of service A.
 
 
 You can find more about actuator and all the endpoints it has [here] (http://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#production-ready).

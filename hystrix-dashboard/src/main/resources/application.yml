@@ -1,0 +1,31 @@
+info:
+  component: Hystrix Dashboard
+
+endpoints:
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true
+
+server:
+  port: 7979
+
+logging:
+  level:
+    ROOT: INFO
+    org.springframework.web: DEBUG
+
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/
+  instance:
+    leaseRenewalIntervalInSeconds: 5
+    leaseExpirationDurationInSeconds: 5
+    preferIpAddress: false
+    metadataMap:
+      hostname: ${vcap.application.application_uris[0]}
+      instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${random.value}}}

@@ -14,7 +14,6 @@ import org.springframework.context.annotation.Configuration;
 @EnableAutoConfiguration
 @EnableDiscoveryClient
 @EnableConfigServer
-@ComponentScan("service.config.*")
 public class ConfigService {
 
     public static void main(String[] args) {

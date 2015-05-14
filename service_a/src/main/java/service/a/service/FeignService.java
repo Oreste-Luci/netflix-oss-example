@@ -1,5 +1,6 @@
 package service.a.service;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.netflix.feign.FeignClient;
@@ -20,11 +21,16 @@ public class FeignService extends AbstractService {
     @Autowired
     private ServiceBClient serviceBClient;
 
+    @HystrixCommand(fallbackMethod = "defaultCall")
     public MessageBean feignClient() {
         String uuid = UUID.randomUUID().toString();
         MessageBean messageBean = serviceBClient.getMessage(uuid);
         System.out.println(messageBean.toString());
         return messageBean;
+    }
+
+    public MessageBean defaultCall() {
+        return new MessageBean("Default Method");
     }
 
     @FeignClient(FeignService.CLIENT_SERVICE)

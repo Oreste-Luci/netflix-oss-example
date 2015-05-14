@@ -1,5 +1,7 @@
 info:
-  component: Hystrix Dashboard
+  component: Turbine
+
+PREFIX:
 
 endpoints:
   restart:
@@ -8,22 +10,20 @@ endpoints:
     enabled: true
 
 server:
-  port: 7979
+  port: 8989
+
+management:
+  port: 8990
 
 logging:
   level:
-    ROOT: INFO
-    org.springframework.web: DEBUG
+    root: INFO
+    com.netflix.discovery: 'OFF'
+    # org.springframework.integration: DEBUG
 
 eureka:
-  client:
-    registerWithEureka: true
-    fetchRegistry: true
-    serviceUrl:
-      defaultZone: http://127.0.0.1:8761/eureka/
   instance:
-    leaseRenewalIntervalInSeconds: 5
-    leaseExpirationDurationInSeconds: 5
+    leaseExpirationDurationInSeconds: 10
     preferIpAddress: false
     metadataMap:
       hostname: ${vcap.application.application_uris[0]}

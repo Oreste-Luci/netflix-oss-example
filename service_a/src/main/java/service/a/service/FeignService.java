@@ -21,7 +21,7 @@ public class FeignService extends AbstractService {
     @Autowired
     private ServiceBClient serviceBClient;
 
-    @HystrixCommand(fallbackMethod = "defaultCall")
+    @HystrixCommand(fallbackMethod = "fallback")
     public MessageBean feignClient() {
         String uuid = UUID.randomUUID().toString();
         MessageBean messageBean = serviceBClient.getMessage(uuid);
@@ -29,8 +29,8 @@ public class FeignService extends AbstractService {
         return messageBean;
     }
 
-    public MessageBean defaultCall() {
-        return new MessageBean("Default Method");
+    private MessageBean fallback() {
+        return new MessageBean("Fallback Method");
     }
 
     @FeignClient(FeignService.CLIENT_SERVICE)

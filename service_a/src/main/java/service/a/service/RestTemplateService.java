@@ -1,5 +1,6 @@
 package service.a.service;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.ribbon.Ribbon;
 import io.netty.buffer.ByteBuf;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,6 +41,7 @@ public class RestTemplateService extends AbstractService {
         return responseEntity.getBody();
     }
 
+    @HystrixCommand(fallbackMethod = "restTemplate2Fallback")
     public MessageBean restTemplate2() {
 
         String uuid = UUID.randomUUID().toString();
@@ -59,4 +61,7 @@ public class RestTemplateService extends AbstractService {
         return message;
     }
 
+    private MessageBean restTemplate2Fallback() {
+        return new MessageBean("Fallback Method");
+    }
 }

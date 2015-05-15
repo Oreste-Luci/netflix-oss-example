@@ -1,13 +1,14 @@
-package service.b.controller;
+package service.c.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.*;
-import service.b.bean.MessageBean;
-import service.b.service.ServiceC;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+import service.c.bean.MessageBean;
 
 import java.util.concurrent.atomic.AtomicLong;
 
@@ -17,13 +18,10 @@ import java.util.concurrent.atomic.AtomicLong;
 @EnableAutoConfiguration
 @RefreshScope
 @RestController
-public class ServiceBController {
+public class ServiceCController {
 
-    @Value("${default.message:Service B }")
+    @Value("${default.message:Service C }")
     String message;
-
-    @Autowired
-    private ServiceC serviceC;
 
     private final AtomicLong counter = new AtomicLong();
 
@@ -33,17 +31,20 @@ public class ServiceBController {
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     public MessageBean test() {
-        return new MessageBean("Service B");
+        return new MessageBean("Service C");
     }
 
     @RequestMapping(
-            value = "/processMsg",
+            value = "/echo",
             method= RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public MessageBean processMsg(@RequestParam(value="msg", required=false, defaultValue="Hello") String msg) {
+    public MessageBean echo(@RequestParam(value="msg", required=false, defaultValue="Hello") String msg) {
 
         System.out.println(counter.incrementAndGet() + ". ServiceBController.echo: " + msg);
-        return serviceC.callServiceC(msg);
+
+        MessageBean messageBean = new MessageBean(message + " " + msg);
+
+        return messageBean;
     }
 }

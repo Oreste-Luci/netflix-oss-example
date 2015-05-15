@@ -1,0 +1,17 @@
+#
+# Use valid URI characters (eg: do not use _ in names)
+#
+spring:
+  application:
+    name: serviceC
+  profiles:
+    active: native
+  cloud:
+    config:
+      failFast: true  # Will not start service if no config server found
+      env: default # optional
+      label: master # optional
+      uri: http://localhost:8888 # Location of config server (needed if discovery.enabled=false)
+#      discovery:
+#        enabled: true
+#        serviceId: CONFIG-SERVICE

@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>netflix-oss-example</groupId>
-    <artifactId>service_b</artifactId>
+    <artifactId>service_c</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <parent>
@@ -16,7 +16,7 @@
 
     <properties>
         <spring-cloud.version>1.0.0.RELEASE</spring-cloud.version>
-        <start-class>service.b.boot.ApplicationB</start-class>
+        <start-class>service.c.boot.ApplicationC</start-class>
         <java.version>1.8</java.version>
     </properties>
 
@@ -39,25 +39,10 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-config-client</artifactId>
-            <version>${spring-cloud.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-hystrix</artifactId>
-            <version>${spring-cloud.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-netflix-hystrix-amqp</artifactId>
-            <version>1.0.1.RELEASE</version>
-        </dependency>
     </dependencies>
 
     <build>
-        <finalName>service-b</finalName>
+        <finalName>service-c</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -68,28 +53,14 @@
 
     <repositories>
         <repository>
-            <id>repo.spring.io-milestones</id>
-            <name>repo.spring.io-milestones</name>
-            <url>http://repo.spring.io/libs-milestone-local</url>
-        </repository>
-        <repository>
-            <id>repo.spring.io-snapshots</id>
-            <name>repo.spring.io-snapshots</name>
-            <url>http://repo.spring.io/libs-snapshot-local</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
+            <id>spring-releases</id>
+            <url>https://repo.spring.io/libs-release</url>
         </repository>
     </repositories>
-
     <pluginRepositories>
         <pluginRepository>
-            <id>spring-libs-milestones</id>
-            <url>http://repo.spring.io/libs-milestone-local</url>
-        </pluginRepository>
-        <pluginRepository>
-            <id>spring-libs-release</id>
-            <url>http://repo.spring.io/libs-release-local</url>
+            <id>spring-releases</id>
+            <url>https://repo.spring.io/libs-release</url>
         </pluginRepository>
     </pluginRepositories>
 

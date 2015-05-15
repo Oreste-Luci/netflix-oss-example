@@ -30,7 +30,9 @@ public class FeignService extends AbstractService {
     }
 
     private MessageBean fallback() {
-        return new MessageBean("Fallback Method");
+        MessageBean messageBean = new MessageBean("Fallback Method");
+        System.out.println(messageBean);
+        return messageBean;
     }
 
     @FeignClient(FeignService.CLIENT_SERVICE)

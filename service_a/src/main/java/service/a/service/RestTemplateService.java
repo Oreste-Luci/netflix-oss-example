@@ -62,6 +62,8 @@ public class RestTemplateService extends AbstractService {
     }
 
     private MessageBean restTemplate2Fallback() {
-        return new MessageBean("Fallback Method");
+        MessageBean messageBean = new MessageBean("Fallback Method");
+        System.out.println(messageBean);
+        return messageBean;
     }
 }

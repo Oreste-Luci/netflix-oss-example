@@ -7,7 +7,7 @@ import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import service.b.bean.MessageBean;
-import service.b.service.ServiceC;
+import service.b.service.MessageService;
 
 import java.util.concurrent.atomic.AtomicLong;
 
@@ -23,7 +23,7 @@ public class ServiceBController {
     String message;
 
     @Autowired
-    private ServiceC serviceC;
+    private MessageService messageService;
 
     private final AtomicLong counter = new AtomicLong();
 
@@ -41,9 +41,9 @@ public class ServiceBController {
             method= RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public MessageBean processMsg(@RequestParam(value="msg", required=false, defaultValue="Hello") String msg) {
+    public MessageBean processMsg(@RequestParam(value="msg", required=false, defaultValue="ServiceB") String msg) {
 
         System.out.println(counter.incrementAndGet() + ". ServiceBController.echo: " + msg);
-        return serviceC.callServiceC(msg);
+        return messageService.callServiceC(msg);
     }
 }

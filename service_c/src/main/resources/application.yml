@@ -2,6 +2,9 @@
 server:
   port: 0
 
+info:
+  name: "Service C"
+
 #Actuator management path
 management:
   context-path: /admin

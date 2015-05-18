@@ -25,7 +25,6 @@ public class FeignService extends AbstractService {
     public MessageBean feignClient() {
         String uuid = UUID.randomUUID().toString();
         MessageBean messageBean = serviceBClient.getMessage(uuid);
-        System.out.println(messageBean.toString());
         return messageBean;
     }
 
@@ -38,7 +37,7 @@ public class FeignService extends AbstractService {
     @FeignClient(FeignService.CLIENT_SERVICE)
     public interface ServiceBClient {
 
-        @RequestMapping(method = RequestMethod.GET, value = "/echo?msg={msg}")
+        @RequestMapping(method = RequestMethod.GET, value = "/processMsg?msg={msg}")
         MessageBean getMessage(@PathVariable(value = "msg") String msg);
     }
 }

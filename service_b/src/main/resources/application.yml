@@ -2,6 +2,10 @@
 server:
   port: 0
 
+info:
+  name: "Service B"
+  description: "Client for service C"
+
 #Actuator management path
 management:
   context-path: /admin

@@ -15,7 +15,7 @@ import java.util.UUID;
  * @author Oreste Luci
  */
 @Component
-public class ServiceC {
+public class MessageService {
 
     @Autowired
     private ServiceCClient serviceCClient;
@@ -23,8 +23,7 @@ public class ServiceC {
     @HystrixCommand(fallbackMethod = "fallback")
     public MessageBean callServiceC(String msg) {
         String uuid = UUID.randomUUID().toString();
-        MessageBean messageBean = serviceCClient.getMessage(uuid);
-        System.out.println(messageBean.toString());
+        MessageBean messageBean = serviceCClient.getMessage(msg + " " + uuid);
         return messageBean;
     }
 
@@ -36,7 +35,6 @@ public class ServiceC {
 
     @FeignClient("serviceC")
     public interface ServiceCClient {
-
         @RequestMapping(method = RequestMethod.GET, value = "/echo?msg={msg}")
         MessageBean getMessage(@PathVariable(value = "msg") String msg);
     }

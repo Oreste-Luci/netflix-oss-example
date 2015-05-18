@@ -20,7 +20,7 @@ import java.util.concurrent.atomic.AtomicLong;
 @RestController
 public class ServiceCController {
 
-    @Value("${default.message:Service C }")
+    @Value("${default.message:ServiceC}")
     String message;
 
     private final AtomicLong counter = new AtomicLong();
@@ -31,7 +31,7 @@ public class ServiceCController {
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     public MessageBean test() {
-        return new MessageBean("Service C");
+        return new MessageBean("ServiceC");
     }
 
     @RequestMapping(
@@ -39,7 +39,7 @@ public class ServiceCController {
             method= RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public MessageBean echo(@RequestParam(value="msg", required=false, defaultValue="Hello") String msg) {
+    public MessageBean echo(@RequestParam(value="msg", required=false, defaultValue="ServiceC") String msg) {
 
         System.out.println(counter.incrementAndGet() + ". ServiceBController.echo: " + msg);
 

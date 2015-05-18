@@ -17,7 +17,7 @@ mvn clean package
 To execute:
  
 ```ShellSession
-java -jar target/service-b.jar
+java -jar target/service-c.jar
 ```
  
 This will start the microservice B in an automatically assigned port and register it with eureka. To check if it has been successfully registered with eureka check the eureka status page:
@@ -29,7 +29,7 @@ http://localhost:8761/
 To test the service you can do the following 
  
 ```ShellSession
-curl http://localhost:<replace_with_service_port>/echo\?msg\=Hello | jq .
+curl http://localhost:<replace_with_service_port>/processMsg\?msg\=Hello | jq .
 ```
  
 You should see the following output:

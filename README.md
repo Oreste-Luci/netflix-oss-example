@@ -10,12 +10,15 @@ The example contains the following components:
 
 1. [Eureka Service] (https://github.com/Oreste-Luci/netflix-oss-example/tree/master/eureka-server)
 2. [Config Service] (https://github.com/Oreste-Luci/netflix-oss-example/tree/master/config-service)
-3. [Microservice B: This is the server micro-service] (https://github.com/Oreste-Luci/netflix-oss-example/tree/master/service_b)
-4. [Microservice A: This is the client micro-service] (https://github.com/Oreste-Luci/netflix-oss-example/tree/master/service_a)
+3. [Hystrix App] (https://github.com/Oreste-Luci/netflix-oss-example/tree/master/hystrix-dashboard)
+4. [Turbine] (https://github.com/Oreste-Luci/netflix-oss-example/tree/master/turbine)
+5. [Microservice C: This is the server micro-service for service B] (https://github.com/Oreste-Luci/netflix-oss-example/tree/master/service_c)
+6. [Microservice B: This is the server micro-service for service A] (https://github.com/Oreste-Luci/netflix-oss-example/tree/master/service_b)
+7. [Microservice A: This is the client micro-service] (https://github.com/Oreste-Luci/netflix-oss-example/tree/master/service_a)
 
 The services can be started in any other but it recommended to start them in above order.
 
-Service A exposes endpoints that in turn call service B endpoints. For this it finds service B by using Eureka.
+Service A exposes endpoints that in turn call service B endpoints and service B will call service C endpoints. The clien services find the server services via Eureka.
 
 There is further documentation for each component in the links above.
 

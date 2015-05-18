@@ -1,5 +1,6 @@
 package service.c.controller;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
@@ -34,6 +35,7 @@ public class ServiceCController {
         return new MessageBean("ServiceC");
     }
 
+    @HystrixCommand
     @RequestMapping(
             value = "/echo",
             method= RequestMethod.GET,

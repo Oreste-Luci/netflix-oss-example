@@ -1,8 +1,8 @@
-#Netflix OSS Example - Service B
+#Netflix OSS Example - Service C
 
 ##Introduction
 
-This is a very simple micro-service that simple forwards the calls to service C.
+This is a very simple micro-service that simple echoes back the received message pre-appending a string obtained from the config repository.
 
 The purpose of this service is to server as a server to micro-service A. To test load balancing features you can instantiate this service multiple times, the auto port configuration will assign different ports.
 

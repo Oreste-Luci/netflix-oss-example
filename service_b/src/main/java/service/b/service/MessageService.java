@@ -2,6 +2,8 @@ package service.b.service;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,8 +16,12 @@ import java.util.UUID;
 /**
  * @author Oreste Luci
  */
+@RefreshScope
 @Component
 public class MessageService {
+
+    @Value("${default.message:Service B }")
+    String message;
 
     @Autowired
     private ServiceCClient serviceCClient;

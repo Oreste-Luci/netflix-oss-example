@@ -137,7 +137,7 @@ http://localhost:<port>/admin/hystrix.stream
 
 ##Hystrix Dashboard
 
-
+The Hystrix Dashboard can be 
 
 
 

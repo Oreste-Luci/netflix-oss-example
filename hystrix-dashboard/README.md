@@ -139,7 +139,7 @@ http://localhost:<port>/admin/hystrix.stream
 
 The Hystrix Dashboard can be 
 
-![Alt text](hystrix_home.tiff?raw=true "Optional Title")
+![Alt text](https://github.com/Oreste-Luci/netflix-oss-example/blob/master/hystrix-dashboard/hystrix_home.tiff)
 
 
 

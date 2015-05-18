@@ -1,4 +1,4 @@
-#Netflix OSS Example - Hystrix Dashboard
+#Netflix OSS Example - Hystrix
 
 Hystrix is a library that implemts the circuit breaker pattern. This means that the calls from one service to another wont be made
 if the server service is not responding. The client service will call a fallback method to take care of the failed calls.
@@ -156,8 +156,5 @@ You should see the graphs for all the Hystrix enabled methods in the service. Fo
 
 ![Hystrix Home](https://github.com/Oreste-Luci/netflix-oss-example/blob/master/hystrix-dashboard/hystrix_A.png?raw=true)
 
-
-
-
-
+This willa llow you to monitor one service. In order to monitor several services at one in the Hystrix Dashboard we need to use an agregator like [Turbine](https://github.com/Oreste-Luci/netflix-oss-example/tree/master/turbine).
 

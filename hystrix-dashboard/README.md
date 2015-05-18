@@ -139,5 +139,8 @@ http://localhost:<port>/admin/hystrix.stream
 
 The Hystrix Dashboard can be 
 
+![Alt text](hystrix_home.tiff?raw=true "Optional Title")
+
+
 
 

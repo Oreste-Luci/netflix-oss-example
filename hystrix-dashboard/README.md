@@ -13,7 +13,7 @@ More information about hystrix Clients can be found [here] (http://projects.spri
 
 Hystrix provides various endpoints on top of the Actuator library to monitor the status of the calls.
 
-###Health Indiator
+####Health Indiator
 
 ```
 http://localhost:<port>/admin/health```
@@ -57,7 +57,7 @@ This endpoint will show the health of the service including the status hystrix:
  }
 ```
 
-###Metrics Indicator
+####Metrics Indicator
 
 This indicator will display the metrics for the service. 
 
@@ -127,7 +127,7 @@ The output is something like this:
 }
 ```
 
-###Hystrix Stream Endpoint
+####Hystrix Stream Endpoint
 
 The hystrix library creates and endpoint which has the status of each of the calls. This stream is ment to be used with the Hystrix Dashboard.
 

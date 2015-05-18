@@ -15,8 +15,7 @@ Hystrix provides various endpoints on top of the Actuator library to monitor the
 
 ####Health Indiator
 
-```
-http://localhost:<port>/admin/health```
+```http://localhost:<port>/admin/health```
 
 This endpoint will show the health of the service including the status hystrix:
  
@@ -137,11 +136,27 @@ http://localhost:<port>/admin/hystrix.stream
 
 ##Hystrix Dashboard
 
-The Hystrix Dashboard can be 
+The Hystrix Dashboard URL is:
+  
+```
+http://localhost:7979
+```  
+  
+You should see something like this:  
 
-![Alt Text](https://github.com/Oreste-Luci/netflix-oss-example/blob/master/hystrix-dashboard/hystrix_home.png?raw=true)
+![Hystrix Home](https://github.com/Oreste-Luci/netflix-oss-example/blob/master/hystrix-dashboard/hystrix_home.png?raw=true)
 
-![Alt text](https://github.com/Oreste-Luci/netflix-oss-example/blob/master/hystrix-dashboard/hystrix_home.png)
+Here you must enter the URL for the service Hystrix stream, ie:
+
+```
+http://localhost:<port>/admin/hystrix.stream
+```
+
+You should see the graphs for all the Hystrix enabled methods in the service. For example:
+
+![Hystrix Home](https://github.com/Oreste-Luci/netflix-oss-example/blob/master/hystrix-dashboard/hystrix_A.png?raw=true)
+
+
 
 
 

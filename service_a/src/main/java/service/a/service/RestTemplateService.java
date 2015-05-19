@@ -31,7 +31,7 @@ public class RestTemplateService extends AbstractService {
     public MessageBean restTemplate() {
 
         // use the "smart" Eureka-aware RestTemplate
-        ResponseEntity<MessageBean> responseEntity = this.restTemplate.exchange("http://" + RestTemplateService.CLIENT_SERVICE + "/echo",
+        ResponseEntity<MessageBean> responseEntity = this.restTemplate.exchange("http://" + RestTemplateService.CLIENT_SERVICE + "/processMsg",
                         HttpMethod.GET,
                         null,
                         MessageBean.class);
@@ -50,7 +50,7 @@ public class RestTemplateService extends AbstractService {
 
         URI serviceURI = instance.getUri();
 
-        String url = serviceURI.toString() + "/echo?msg=" + uuid;
+        String url = serviceURI.toString() + "/processMsg?msg=" + uuid;
 
         RestTemplate restTemplate = new RestTemplate();
 

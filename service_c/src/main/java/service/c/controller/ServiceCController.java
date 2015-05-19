@@ -43,7 +43,7 @@ public class ServiceCController {
     )
     public MessageBean echo(@RequestParam(value="msg", required=false, defaultValue="ServiceC") String msg) {
 
-        System.out.println(counter.incrementAndGet() + ". ServiceBController.echo: " + msg);
+        System.out.println(counter.incrementAndGet() + ". ServiceCController.echo: " + msg);
 
         MessageBean messageBean = new MessageBean(message + " " + msg);
 

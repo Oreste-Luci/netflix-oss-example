@@ -1,7 +1,6 @@
 package service.b.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -15,7 +14,6 @@ import java.util.concurrent.atomic.AtomicLong;
 /**
  * @author Oreste Luci
  */
-@EnableAutoConfiguration
 @RestController
 public class ServiceBController {
 

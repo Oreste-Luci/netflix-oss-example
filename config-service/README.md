@@ -100,4 +100,4 @@ As you can see it returns the default configuration overridden by the local conf
 
 Now you have the config server running and reading the configuration files from a git repository. When the files are updated in the repository the config service will return the new versions.
 
-More information can be found [here] (http://cloud.spring.io/spring-cloud-config/).
+More information can be found [here] (http://cloud.spring.io/spring-cloud-config/spring-cloud-config.html).

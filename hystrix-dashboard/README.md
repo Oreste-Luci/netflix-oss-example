@@ -181,3 +181,9 @@ You should see the graphs for all the Hystrix enabled methods in the service. Fo
 
 This willa llow you to monitor one service. In order to monitor several services at one in the Hystrix Dashboard we need to use an agregator like [Turbine](https://github.com/Oreste-Luci/netflix-oss-example/tree/master/turbine).
 
+
+##Reference
+
+Here is a video that show the Hystrix Dashboard:
+
+[http://blog.fogcreek.com/hystrix-dashboard-tech-talk-with-demo/](http://blog.fogcreek.com/hystrix-dashboard-tech-talk-with-demo/)

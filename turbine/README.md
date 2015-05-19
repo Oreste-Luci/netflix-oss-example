@@ -15,7 +15,7 @@ To enable [RabbitMQ](https://www.rabbitmq.com/) just download it and follow the 
 ##Enabling Services for turbine
 
 To enable Turbine monitoring through RabbitMQ in a service the ```org.springframework.cloud:spring-cloud-netflix-hystrix-amqp``` dependency has to be added to the project.
-Also the Spring Boot App needs to be annotated with ```@EnableCircuitBreaker``` and the methods that are going to be monitored annotated with ``@HystrixCommand```.
+Also the Spring Boot App needs to be annotated with ```@EnableCircuitBreaker``` and the methods that are going to be monitored annotated with ```@HystrixCommand```.
 
 ##Quick Start
 

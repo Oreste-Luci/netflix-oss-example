@@ -9,6 +9,29 @@ The Hystrix library is added to each micro-service that needs to use the circuit
 
 More information about hystrix Clients can be found [here] (http://projects.spring.io/spring-cloud/spring-cloud.html#_circuit_breaker_hystrix_clients).
 
+##Quick Start
+
+To compile:
+
+```ShellSession
+mvn clean package
+```
+
+To execute:
+
+```ShellSession
+java -jar target/hystrix-dashboard.jar
+```
+
+The Dashboard is found at:
+
+```ShellSession
+http://localhost:7979/
+```
+
+See below on how to add a stream to the dashboard.
+
+
 ##Hystrix Endpoints
 
 Hystrix provides various endpoints on top of the Actuator library to monitor the status of the calls.

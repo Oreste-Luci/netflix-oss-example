@@ -8,10 +8,10 @@ The main objective is to test how the micro-services use the discovery service (
  
 The example contains the following components:
 
-1. [Eureka Service] (https://github.com/Oreste-Luci/netflix-oss-example/tree/master/eureka-server)
+1. [Eureka] (https://github.com/Oreste-Luci/netflix-oss-example/tree/master/eureka-server)
 2. [Config Service] (https://github.com/Oreste-Luci/netflix-oss-example/tree/master/config-service)
 3. [Turbine] (https://github.com/Oreste-Luci/netflix-oss-example/tree/master/turbine)
-4. [Hystrix App] (https://github.com/Oreste-Luci/netflix-oss-example/tree/master/hystrix-dashboard)
+4. [Hystrix] (https://github.com/Oreste-Luci/netflix-oss-example/tree/master/hystrix-dashboard)
 5. [Microservice C: This is the server micro-service for service B] (https://github.com/Oreste-Luci/netflix-oss-example/tree/master/service_c)
 6. [Microservice B: This is the server micro-service for service A] (https://github.com/Oreste-Luci/netflix-oss-example/tree/master/service_b)
 7. [Microservice A: This is the client micro-service] (https://github.com/Oreste-Luci/netflix-oss-example/tree/master/service_a)

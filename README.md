@@ -15,6 +15,7 @@ The example contains the following components:
 5. [Microservice C: This is the server micro-service for service B] (https://github.com/Oreste-Luci/netflix-oss-example/tree/master/service_c)
 6. [Microservice B: This is the server micro-service for service A] (https://github.com/Oreste-Luci/netflix-oss-example/tree/master/service_b)
 7. [Microservice A: This is the client micro-service] (https://github.com/Oreste-Luci/netflix-oss-example/tree/master/service_a)
+8. [Zuul](https://github.com/Oreste-Luci/netflix-oss-example/tree/master/zuul)
 
 The services can be started in any other but it recommended to start them in above order.
 

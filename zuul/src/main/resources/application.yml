@@ -1,0 +1,40 @@
+info:
+  name: "Zuul Server"
+  description: "Gatekeeper"
+
+endpoints:
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true
+  health:
+    sensitive: false
+
+zuul:
+  ignoredServices: "*"
+  routes:
+    servicea:
+      path: /servicea/**
+      serviceId: servicea
+
+server:
+  port: 8765
+
+logging:
+  level:
+    ROOT: INFO
+    org.springframework.web: INFO
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/
+  instance:
+    leaseRenewalIntervalInSeconds: 5
+    leaseExpirationDurationInSeconds: 5
+    preferIpAddress: false
+    metadataMap:
+      hostname: ${vcap.application.application_uris[0]}
+      instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${random.value}}}

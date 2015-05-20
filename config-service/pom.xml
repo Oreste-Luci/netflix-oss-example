@@ -6,7 +6,11 @@
 
     <groupId>netflix-oss-example</groupId>
     <artifactId>config-service</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>..</module>
+    </modules>
 
     <parent>
         <groupId>org.springframework.boot</groupId>

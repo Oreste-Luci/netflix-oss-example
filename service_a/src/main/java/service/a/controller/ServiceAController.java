@@ -12,6 +12,7 @@ import service.a.service.FeignService;
 import service.a.service.RestTemplateService;
 
 import java.util.List;
+import java.util.concurrent.atomic.AtomicLong;
 
 /**
  * @author Oreste Luci
@@ -28,12 +29,15 @@ public class ServiceAController {
     @Autowired
     private FeignService feignService;
 
+    private final AtomicLong counter = new AtomicLong();
+
     @RequestMapping(
             value = "/test",
             method= RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     public MessageBean test() {
+        System.out.println(counter.incrementAndGet() + ". ServiceBController.test");
         return new MessageBean("Service A");
     }
 
@@ -43,6 +47,7 @@ public class ServiceAController {
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     public List<String> discoveryClient() {
+        System.out.println(counter.incrementAndGet() + ". ServiceBController.discoveryClient");
         return discoveryClientService.discoveryClient();
     }
 
@@ -52,6 +57,7 @@ public class ServiceAController {
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     public MessageBean restTemplate() {
+        System.out.println(counter.incrementAndGet() + ". ServiceBController.restTemplate");
         return restTemplateService.restTemplate();
     }
 
@@ -61,6 +67,7 @@ public class ServiceAController {
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     public @ResponseBody MessageBean restTemplate2() {
+        System.out.println(counter.incrementAndGet() + ". ServiceBController.restTemplate2");
         return restTemplateService.restTemplate2();
     }
 
@@ -70,6 +77,7 @@ public class ServiceAController {
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     public MessageBean feignClient() {
+        System.out.println(counter.incrementAndGet() + ". ServiceBController.feignClient");
         return feignService.feignClient();
     }
 

@@ -116,3 +116,5 @@ microservices via RabbitMQ. For this to work RabbitMQ must be running. For examp
 ```ShellSession
 curl -X POST http://localhost:<port>/admin/bus/refresh
 ```
+
+More info [here](https://github.com/lahirip/spring-cloud-example#quick-facts-about-spring-cloud-bus)

@@ -107,6 +107,12 @@ More information can be found [here] (http://cloud.spring.io/spring-cloud-config
 There is an endpoint in the microservices to refresh the changes in the configuration file. A POST request must be issued ```/refresh``` endpoint. 
 
 ```ShellSession
-curl -X POST http://localhost:9696/admin/refresh
+curl -X POST http://localhost:<port>/admin/refresh
 ```
 
+To refresh all services at once ```spring cloud bus``` adds a ```/bus/refresh``` endpoint to the microservices. If this endpoint is called it will send refresh message to all the
+microservices via RabbitMQ. For this to work RabbitMQ must be running. For example:  
+
+```ShellSession
+curl -X POST http://localhost:<port>/admin/bus/refresh
+```

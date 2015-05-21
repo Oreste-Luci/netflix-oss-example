@@ -49,6 +49,11 @@
             <artifactId>spring-cloud-netflix-hystrix-amqp</artifactId>
             <version>1.0.1.RELEASE</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bus-amqp</artifactId>
+            <version>${spring-cloud.version}</version>
+        </dependency>
     </dependencies>
 
     <build>

@@ -101,3 +101,12 @@ As you can see it returns the default configuration overridden by the local conf
 Now you have the config server running and reading the configuration files from a git repository. When the files are updated in the repository the config service will return the new versions.
 
 More information can be found [here] (http://cloud.spring.io/spring-cloud-config/spring-cloud-config.html).
+
+##Refreshing Changes
+
+There is an endpoint in the microservices to refresh the changes in the configuration file. A POST request must be issued ```/refresh``` endpoint. 
+
+```ShellSession
+curl -X POST http://localhost:9696/admin/refresh
+```
+

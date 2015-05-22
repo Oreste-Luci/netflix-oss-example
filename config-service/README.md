@@ -118,3 +118,7 @@ curl -X POST http://localhost:<port>/admin/bus/refresh
 ```
 
 More info [here](https://github.com/lahirip/spring-cloud-example#quick-facts-about-spring-cloud-bus)
+
+> NOTE:
+> Here we are using ```/admin``` in as the Actuator prefix because it has been configured so in the ```application.yml``` file. 
+If no admin context is configured then the Actuator enpoints start from the root context. 

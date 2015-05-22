@@ -1,0 +1,35 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.2.3.RELEASE</version>
+    </parent>
+
+    <groupId>netflix-oss-example</groupId>
+    <artifactId>microservices-example</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>config-service</module>
+        <module>eureka-server</module>
+        <module>hystrix-dashboard</module>
+        <module>service_a</module>
+        <module>service_b</module>
+        <module>service_c</module>
+        <module>turbine</module>
+        <module>zuul</module>
+    </modules>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <spring-cloud.version>1.0.1.RELEASE</spring-cloud.version>
+        <spring-boot.version>1.2.3.RELEASE</spring-boot.version>
+        <java.version>1.8</java.version>
+    </properties>
+
+</project>

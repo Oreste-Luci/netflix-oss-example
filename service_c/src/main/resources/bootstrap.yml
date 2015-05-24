@@ -1,3 +1,10 @@
+#This will automatically assing a port
+server:
+  port: 0
+
+info:
+  name: "Service C"
+
 #
 # Use valid URI characters (eg: do not use _ in names)
 #
@@ -12,6 +19,8 @@ spring:
       env: default # optional
       label: master # optional
       uri: http://localhost:8888 # Location of config server (needed if discovery.enabled=false)
+
+# Discovery has an issue https://github.com/spring-cloud/spring-cloud-config/issues/93
 #      discovery:
 #        enabled: true
 #        serviceId: CONFIG-SERVICE

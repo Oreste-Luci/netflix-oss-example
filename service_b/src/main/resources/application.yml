@@ -1,34 +1,3 @@
-#This will automatically assing a port
-server:
-  port: 0
-
-info:
-  name: "Service B"
-  description: "Client for service C"
-
-#Actuator management path
-management:
-  context-path: /admin
-
-#Enabling actuator endpoints
-endpoints:
-  restart:
-    enabled: true
-  shutdown:
-    enabled: true
-  health:
-    sensitive: false
-
-eureka:
-  client:
-    registerWithEureka: true
-    fetchRegistry: true
-    serviceUrl:
-      defaultZone: http://127.0.0.1:8761/eureka/
-  instance:
-    leaseRenewalIntervalInSeconds: 5
-    leaseExpirationDurationInSeconds: 5
-    preferIpAddress: false
-    metadataMap:
-      hostname: ${vcap.application.application_uris[0]}
-      instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${random.value}}}
+#
+# The configuration is being obtained from application.yml in Config-Service
+#

@@ -1,0 +1,41 @@
+#
+# This configuration is propagated to all services that use the Configuration Service
+# Note: This is currently not working on Mac OS
+
+#Actuator management path
+management:
+  context-path: /admin
+
+info:
+  configuration: "Read From Config Service application.yml"
+
+#Enabling actuator endpoints
+endpoints:
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true
+  health:
+    sensitive: false
+
+logging:
+  level:
+    com.netflix.discovery: 'OFF'
+    org.springframework.cloud: 'DEBUG'
+
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    leaseExpirationDurationInSeconds: 5
+    preferIpAddress: false
+    statusPageUrlPath: /admin/info
+    healthCheckUrlPath: /admin/health
+    metadataMap:
+      hostname: ${vcap.application.application_uris[0]}
+      instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${random.value}}}
+#    nonSecurePort: ${CF_INSTANCE_PORT:${PORT:${server.port:8888}}}
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/

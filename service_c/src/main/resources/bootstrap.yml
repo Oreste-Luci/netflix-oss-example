@@ -15,6 +15,7 @@ spring:
     active: native
   cloud:
     config:
+      enabled: true
       failFast: true  # Will not start service if no config server found
       env: default # optional
       label: master # optional

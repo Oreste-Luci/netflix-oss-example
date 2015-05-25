@@ -12,7 +12,7 @@ management:
   context-path: /admin
 
 info:
-  configuration: "Read From Config Service"
+  configuration: "Read From Config Service application.yml"
 
 #Enabling actuator endpoints
 endpoints:

@@ -21,7 +21,7 @@ import java.util.concurrent.atomic.AtomicLong;
 @RestController
 public class ServiceCController {
 
-    @Value("${default.message:ServiceC}")
+    @Value("${default.message:Not From Repo C}")
     String message;
 
     private final AtomicLong counter = new AtomicLong();

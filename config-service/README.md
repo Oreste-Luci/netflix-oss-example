@@ -117,7 +117,7 @@ microservices via RabbitMQ. For this to work RabbitMQ must be running. For examp
 curl -X POST http://localhost:<port>/admin/bus/refresh
 ```
 
-More info [here](https://github.com/lahirip/spring-cloud-example#quick-facts-about-spring-cloud-bus)
+More info [here](http://cloud.spring.io/spring-cloud-config/spring-cloud-config.html)
 
 > NOTE:
 > Here we are using ```/admin``` in as the Actuator prefix because it has been configured so in the ```application.yml``` file. 

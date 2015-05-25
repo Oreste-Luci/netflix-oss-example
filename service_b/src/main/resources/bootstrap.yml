@@ -11,8 +11,6 @@ info:
 spring:
   application:
     name: serviceB
-  profiles:
-    active: native
   cloud:
     config:
       failFast: true  # Will not start service if no config server found

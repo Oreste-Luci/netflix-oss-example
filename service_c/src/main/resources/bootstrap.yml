@@ -11,8 +11,6 @@ info:
 spring:
   application:
     name: serviceC
-  profiles:
-    active: native
   cloud:
     config:
       enabled: true

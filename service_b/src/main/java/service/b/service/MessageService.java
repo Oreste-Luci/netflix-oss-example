@@ -20,7 +20,7 @@ import java.util.UUID;
 @Component
 public class MessageService {
 
-    @Value("${default.message:Service B }")
+    @Value("${default.message:Not From Repo B }")
     String message;
 
     @Autowired

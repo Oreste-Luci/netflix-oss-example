@@ -11,6 +11,9 @@
 management:
   context-path: /admin
 
+info:
+  configuration: "Read From Config Service"
+
 #Enabling actuator endpoints
 endpoints:
   restart:

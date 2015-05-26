@@ -4,7 +4,10 @@
 
 This repo contains an example of Sping cloud (Netflix OSS) micro-services architecture.
 
-The main objective is to test how the micro-services use the discovery service (Eureka), the configuration service and the load balancing (Ribbon).
+The main objective is to test how the spring cloud ecosystem. The following image shows the different components of this example:
+
+![Netflix OSS Example](https://github.com/Oreste-Luci/netflix-oss-example/blob/master/netflix-oss-example.png?raw=true)
+
  
 The example contains the following components:
 
@@ -34,5 +37,3 @@ There is further documentation for each component in the links above.
 
 > **Note:**
 > This example is using Spring Boot version 1.2.3.RELEASE and Spring Cloud version 1.0.0.RELEASE.
-
-![Netflix OSS Example](https://github.com/Oreste-Luci/netflix-oss-example/blob/master/netflix-oss-example.png?raw=true)

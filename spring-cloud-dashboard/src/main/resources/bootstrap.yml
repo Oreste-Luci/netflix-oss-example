@@ -1,12 +1,12 @@
 server:
-  port: 8085
+  port: 8086
 
 info:
-  name: "Spring-Boot-Admin"
+  name: "Spring-Cloud-Dashboard"
 
 #
 # Use valid URI characters (eg: do not use _ in names)
 #
 spring:
   application:
-    name: Spring-Boot-Admin
+    name: Spring-Cloud-Dashboard

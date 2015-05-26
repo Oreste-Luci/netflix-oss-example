@@ -34,3 +34,5 @@ There is further documentation for each component in the links above.
 
 > **Note:**
 > This example is using Spring Boot version 1.2.3.RELEASE and Spring Cloud version 1.0.0.RELEASE.
+
+![Netflix OSS Example](https://github.com/Oreste-Luci/netflix-oss-example/blob/master/netflix-oss-example.png?raw=true)

@@ -54,6 +54,10 @@
             <artifactId>spring-cloud-netflix-hystrix-amqp</artifactId>
             <version>1.0.1.RELEASE</version>
         </dependency>
+        <dependency>
+            <groupId>org.jolokia</groupId>
+            <artifactId>jolokia-core</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

@@ -17,6 +17,7 @@
         <module>service_c</module>
         <module>turbine</module>
         <module>zuul</module>
+        <module>spring-boot-admin</module>
     </modules>
 
     <properties>

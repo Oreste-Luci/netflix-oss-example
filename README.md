@@ -19,6 +19,7 @@ The main parts are:
 6. [Microservice B: This is the server micro-service for service A] (https://github.com/Oreste-Luci/netflix-oss-example/tree/master/service_b)
 7. [Microservice A: This is the client micro-service] (https://github.com/Oreste-Luci/netflix-oss-example/tree/master/service_a)
 8. [Zuul](https://github.com/Oreste-Luci/netflix-oss-example/tree/master/zuul)
+9. [Spring Boot Admin](https://github.com/Oreste-Luci/netflix-oss-example/tree/master/spring-boot-admin)
 
 The services can be started in any other but it recommended to start them in above order.
 

@@ -9,8 +9,8 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  * @author Oreste Luci
  */
 @SpringBootApplication
-@EnableCloudDashboard
 @EnableDiscoveryClient
+@EnableCloudDashboard
 public class SpringCloudDashboardApp {
     public static void main(String[] args) {
         SpringApplication.run(SpringCloudDashboardApp.class, args);

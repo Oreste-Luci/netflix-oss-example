@@ -8,6 +8,8 @@
     <artifactId>zuul</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <name>Zuul</name>
+
     <parent>
         <groupId>netflix-oss-example</groupId>
         <artifactId>microservices-example</artifactId>

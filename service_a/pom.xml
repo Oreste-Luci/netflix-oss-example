@@ -8,6 +8,8 @@
     <artifactId>service_a</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <name>Service A</name>
+
     <parent>
         <groupId>netflix-oss-example</groupId>
         <artifactId>microservices-example</artifactId>
@@ -66,12 +68,25 @@
         </dependency>
     </dependencies>
 
+    <!--
     <build>
         <finalName>service-a</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+    -->
+
+    <build>
+        <finalName>service-a</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring-boot.version}</version>
             </plugin>
         </plugins>
     </build>

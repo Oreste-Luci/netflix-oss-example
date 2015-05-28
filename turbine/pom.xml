@@ -8,6 +8,8 @@
     <artifactId>turbine</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <name>Turbine</name>
+
     <parent>
         <groupId>netflix-oss-example</groupId>
         <artifactId>microservices-example</artifactId>

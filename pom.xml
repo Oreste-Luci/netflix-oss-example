@@ -14,6 +14,20 @@
         <version>1.2.3.RELEASE</version>
     </parent>
 
+    <!--
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-parent</artifactId>
+                <version>1.0.0.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    -->
+
     <modules>
         <module>config-service</module>
         <module>eureka-server</module>
@@ -41,6 +55,9 @@
         <spring-cloud-starter-bus-amqp.version>${spring-cloud.version}</spring-cloud-starter-bus-amqp.version>
         <spring-cloud-starter-zuul.version>${spring-cloud.version}</spring-cloud-starter-zuul.version>
         <spring-cloud-config-client.version>${spring-cloud.version}</spring-cloud-config-client.version>
+        <spring-cloud-config-server.version>${spring-cloud.version}</spring-cloud-config-server.version>
+        <spring-cloud-starter-eureka-server.version>${spring-cloud.version}</spring-cloud-starter-eureka-server.version>
+        <spring-cloud-starter-hystrix-dashboard.version>${spring-cloud.version}</spring-cloud-starter-hystrix-dashboard.version>
         <spring-cloud-netflix-hystrix-amqp.version>1.0.1.RELEASE</spring-cloud-netflix-hystrix-amqp.version>
 
         <!--

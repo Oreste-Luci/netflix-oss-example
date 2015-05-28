@@ -8,19 +8,18 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>Spring Cloud Dashboard</name>
-    <description>Spring Boot Admin</description>
+    <name>Spring Boot Admin</name>
+    <description>Spring Boot Admin Dashboard</description>
 
     <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.2.3.RELEASE</version>
+        <groupId>netflix-oss-example</groupId>
+        <artifactId>microservices-example</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <start-class>spring_boot.admin.boot.SpringBootAdminApp</start-class>
-        <java.version>1.8</java.version>
     </properties>
 
     <dependencies>
@@ -53,6 +52,7 @@
         </plugins>
     </build>
 
+    <!--
     <repositories>
         <repository>
             <id>spring-snapshots</id>
@@ -79,5 +79,6 @@
             </snapshots>
         </repository>
     </repositories>
+    -->
 
 </project>

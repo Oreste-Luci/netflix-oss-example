@@ -8,6 +8,8 @@
     <artifactId>service_b</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <name>Service B</name>
+
     <parent>
         <groupId>netflix-oss-example</groupId>
         <artifactId>microservices-example</artifactId>

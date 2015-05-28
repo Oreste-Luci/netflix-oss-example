@@ -8,12 +8,34 @@
     <artifactId>hystrix-dashboard</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <name>Hystrix Dashboard</name>
+
     <parent>
-        <groupId>org.springframework.cloud</groupId>
-        <artifactId>spring-cloud-starter-parent</artifactId>
-        <version>1.0.3.BUILD-SNAPSHOT</version>
-        <relativePath /> <!-- lookup parent from repository -->
+        <groupId>netflix-oss-example</groupId>
+        <artifactId>microservices-example</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-hystrix-dashboard</artifactId>
+            <version>${spring-cloud-starter-hystrix-dashboard.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+            <version>${spring-boot-starter-actuator.version}</version>
+        </dependency>
+        <!--
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-hystrix</artifactId>
+            <scope>test</scope>
+        </dependency>
+        -->
+    </dependencies>
 
     <build>
         <finalName>hystrix-dashboard</finalName>
@@ -22,32 +44,10 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
-            <plugin>
-                <!--skip deploy (this is just a test module) -->
-                <artifactId>maven-deploy-plugin</artifactId>
-                <configuration>
-                    <skip>true</skip>
-                </configuration>
-            </plugin>
         </plugins>
     </build>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-hystrix-dashboard</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-hystrix</artifactId>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
-
+    <!--
     <repositories>
         <repository>
             <id>spring-snapshots</id>
@@ -92,5 +92,6 @@
             </snapshots>
         </pluginRepository>
     </pluginRepositories>
+    -->
 
 </project>

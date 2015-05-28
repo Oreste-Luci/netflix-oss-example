@@ -13,15 +13,14 @@
     <description>Spring Cloud Dashboard Eureka Remote</description>
 
     <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.2.3.RELEASE</version>
+        <groupId>netflix-oss-example</groupId>
+        <artifactId>microservices-example</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <start-class>spring_cloud.dashboard.boot.SpringCloudDashboardApp</start-class>
-        <java.version>1.8</java.version>
     </properties>
 
     <dependencies>
@@ -30,15 +29,17 @@
             <artifactId>spring-cloud-dashboard</artifactId>
             <version>1.0.0.RELEASE</version>
         </dependency>
+        <!--
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-eureka</artifactId>
-            <version>1.0.1.RELEASE</version>
+            <version>${spring-cloud-starter-eureka.version}</version>
         </dependency>
     </dependencies>
 
@@ -48,8 +49,17 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <!-- defined in spring-cloud-starter-parent pom (as documentation hint),
-                    but needs to be repeated here -->
+            </plugin>
+        </plugins>
+    </build>
+
+    <!--
+    <build>
+        <finalName>spring-cloud-dashboard</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
                     <requiresUnpack>
                         <dependency>
@@ -92,5 +102,6 @@
             </snapshots>
         </repository>
     </repositories>
+    -->
 
 </project>

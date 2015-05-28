@@ -10,12 +10,15 @@
     <packaging>jar</packaging>
 
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring-cloud.version>1.0.0.RELEASE</spring-cloud.version>
-        <spring-boot.version>1.2.3.RELEASE</spring-boot.version>
         <start-class>eureka.boot.EurekaApplication</start-class>
-        <java.version>1.8</java.version>
     </properties>
+
+    <parent>
+        <groupId>netflix-oss-example</groupId>
+        <artifactId>microservices-example</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
 
     <dependencyManagement>
         <dependencies>
@@ -33,11 +36,12 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-eureka-server</artifactId>
-            <version>${spring-cloud.version}</version>
+            <version>${spring-cloud-starter-eureka-server.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <version>${spring-boot-starter-web.version}</version>
         </dependency>
     </dependencies>
 
@@ -71,6 +75,7 @@
         </plugins>
     </build>
 
+    <!--
     <repositories>
         <repository>
             <id>spring-releases</id>
@@ -83,5 +88,6 @@
             <url>https://repo.spring.io/libs-release</url>
         </pluginRepository>
     </pluginRepositories>
-    
+    -->
+
 </project>

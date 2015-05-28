@@ -16,9 +16,7 @@
     </parent>
 
     <properties>
-        <spring-cloud.version>1.0.2.RELEASE</spring-cloud.version>
         <start-class>service.zuul.boot.ZuulApp</start-class>
-        <java.version>1.8</java.version>
     </properties>
 
     <build>
@@ -27,13 +25,6 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <!--skip deploy (this is just a test module) -->
-                <artifactId>maven-deploy-plugin</artifactId>
-                <configuration>
-                    <skip>true</skip>
-                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -50,24 +41,26 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
+            <version>${spring-boot-starter-actuator.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-zuul</artifactId>
-            <version>${spring-cloud.version}</version>
+            <version>${spring-cloud-starter-zuul.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-eureka</artifactId>
-            <version>${spring-cloud.version}</version>
+            <version>${spring-cloud-starter-eureka.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-netflix-hystrix-amqp</artifactId>
-            <version>1.0.1.RELEASE</version>
+            <version>${spring-cloud-netflix-hystrix-amqp.version}</version>
         </dependency>
     </dependencies>
 
+    <!--
     <repositories>
         <repository>
             <id>spring-snapshots</id>
@@ -112,5 +105,6 @@
             </snapshots>
         </pluginRepository>
     </pluginRepositories>
+    -->
     
 </project>

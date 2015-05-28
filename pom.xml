@@ -28,16 +28,34 @@
     </modules>
 
     <properties>
-        <spring-boot-starter-web.version>1.2.3.RELEASE</spring-boot-starter-web.version>
-        <spring-boot-starter-actuator.version>1.2.3.RELEASE</spring-boot-starter-actuator.version>
+        <spring-cloud.version>1.0.0.RELEASE</spring-cloud.version>
+        <spring-boot.version>1.2.3.RELEASE</spring-boot.version>
+
+        <spring-boot-starter-web.version>${spring-boot.version}</spring-boot-starter-web.version>
+        <spring-boot-starter-actuator.version>${spring-boot.version}</spring-boot-starter-actuator.version>
         <spring-boot-admin-starter-client.version>1.2.1</spring-boot-admin-starter-client.version>
-        <spring-cloud-starter-eureka.version>1.0.2.RELEASE</spring-cloud-starter-eureka.version>
-        <spring-cloud-starter-feign.version>1.0.2.RELEASE</spring-cloud-starter-feign.version>
-        <spring-cloud-starter-hystrix.version>1.0.2.RELEASE</spring-cloud-starter-hystrix.version>
-        <spring-cloud-starter-turbine-amqp.version>1.0.2.RELEASE</spring-cloud-starter-turbine-amqp.version>
-        <spring-cloud-starter-bus-amqp.version>1.0.1.RELEASE</spring-cloud-starter-bus-amqp.version>
-        <spring-cloud-config-client.version>1.0.1.RELEASE</spring-cloud-config-client.version>
-        <spring-cloud-netflix-hystrix-amqp.version>1.0.2.RELEASE</spring-cloud-netflix-hystrix-amqp.version>
+        <spring-cloud-starter-eureka.version>${spring-cloud.version}</spring-cloud-starter-eureka.version>
+        <spring-cloud-starter-feign.version>${spring-cloud.version}</spring-cloud-starter-feign.version>
+        <spring-cloud-starter-hystrix.version>${spring-cloud.version}</spring-cloud-starter-hystrix.version>
+        <spring-cloud-starter-turbine-amqp.version>${spring-cloud.version}</spring-cloud-starter-turbine-amqp.version>
+        <spring-cloud-starter-bus-amqp.version>${spring-cloud.version}</spring-cloud-starter-bus-amqp.version>
+        <spring-cloud-starter-zuul.version>${spring-cloud.version}</spring-cloud-starter-zuul.version>
+        <spring-cloud-config-client.version>${spring-cloud.version}</spring-cloud-config-client.version>
+        <spring-cloud-netflix-hystrix-amqp.version>1.0.1.RELEASE</spring-cloud-netflix-hystrix-amqp.version>
+
+        <!--
+        <spring-boot-starter-web.version>${spring-boot.version}</spring-boot-starter-web.version>
+        <spring-boot-starter-actuator.version>${spring-boot.version}</spring-boot-starter-actuator.version>
+        <spring-boot-admin-starter-client.version>1.2.1</spring-boot-admin-starter-client.version>
+        <spring-cloud-starter-eureka.version>${spring-cloud.version}</spring-cloud-starter-eureka.version>
+        <spring-cloud-starter-feign.version>${spring-cloud.version}</spring-cloud-starter-feign.version>
+        <spring-cloud-starter-hystrix.version>${spring-cloud.version}</spring-cloud-starter-hystrix.version>
+        <spring-cloud-starter-turbine-amqp.version>${spring-cloud.version}</spring-cloud-starter-turbine-amqp.version>
+        <spring-cloud-starter-bus-amqp.version>${spring-cloud.version}</spring-cloud-starter-bus-amqp.version>
+        <spring-cloud-starter-zuul.version>${spring-cloud.version}</spring-cloud-starter-zuul.version>
+        <spring-cloud-config-client.version>${spring-cloud.version}</spring-cloud-config-client.version>
+        <spring-cloud-netflix-hystrix-amqp.version>${spring-cloud.version}</spring-cloud-netflix-hystrix-amqp.version>
+        -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
     </properties>

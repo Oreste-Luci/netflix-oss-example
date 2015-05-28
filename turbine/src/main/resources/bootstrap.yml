@@ -4,8 +4,8 @@ server:
 info:
   name: "Turbine"
 
-management:
-  port: 8990
+#management:
+#  port: 8990
 
 spring:
   application:

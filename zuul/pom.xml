@@ -9,10 +9,10 @@
     <version>1.0-SNAPSHOT</version>
 
     <parent>
-        <groupId>org.springframework.cloud</groupId>
-        <artifactId>spring-cloud-starter-parent</artifactId>
-        <version>1.0.3.BUILD-SNAPSHOT</version>
-        <relativePath /> <!-- lookup parent from repository -->
+        <groupId>netflix-oss-example</groupId>
+        <artifactId>microservices-example</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
     <properties>

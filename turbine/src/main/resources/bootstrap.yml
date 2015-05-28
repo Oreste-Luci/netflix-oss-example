@@ -1,6 +1,16 @@
+server:
+  port: 8989
+
+info:
+  name: "Turbine"
+
+management:
+  port: 8990
+
 spring:
   application:
     name: turbine
   cloud:
     config:
-      uri: http://localhost:8888
+      failFast: true  # Will not start service if no config server found
+      uri: http://localhost:8888 # Location of config server (needed if discovery.enabled=false)

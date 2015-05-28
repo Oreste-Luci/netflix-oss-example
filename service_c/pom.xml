@@ -9,57 +9,56 @@
     <version>1.0-SNAPSHOT</version>
 
     <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.2.3.RELEASE</version>
+        <groupId>netflix-oss-example</groupId>
+        <artifactId>microservices-example</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
     <properties>
-        <spring-cloud.version>1.0.0.RELEASE</spring-cloud.version>
-        <spring-boot.version>1.2.3.RELEASE</spring-boot.version>
         <start-class>service.c.boot.ApplicationC</start-class>
-        <java.version>1.8</java.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <version>${spring-boot-starter-web.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-eureka</artifactId>
-            <version>${spring-cloud.version}</version>
+            <version>${spring-cloud-starter-eureka.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-feign</artifactId>
-            <version>${spring-cloud.version}</version>
+            <version>${spring-cloud-starter-feign.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
-            <version>${spring-boot.version}</version>
+            <version>${spring-boot-starter-actuator.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-hystrix</artifactId>
-            <version>${spring-cloud.version}</version>
+            <version>${spring-cloud-starter-hystrix.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-netflix-hystrix-amqp</artifactId>
-            <version>1.0.1.RELEASE</version>
+            <version>${spring-cloud-netflix-hystrix-amqp.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-bus-amqp</artifactId>
-            <version>${spring-cloud.version}</version>
+            <version>${spring-cloud-starter-bus-amqp.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-config-client</artifactId>
-            <version>${spring-cloud.version}</version>
+            <version>${spring-cloud-config-client.version}</version>
         </dependency>
         <dependency>
             <groupId>org.jolokia</groupId>
@@ -68,7 +67,7 @@
         <dependency>
             <groupId>de.codecentric</groupId>
             <artifactId>spring-boot-admin-starter-client</artifactId>
-            <version>1.2.1</version>
+            <version>${spring-boot-admin-starter-client.version}</version>
         </dependency>
     </dependencies>
 

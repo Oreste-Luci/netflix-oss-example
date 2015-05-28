@@ -34,11 +34,13 @@
             <artifactId>spring-boot-admin-server-ui</artifactId>
             <version>1.2.1</version>
         </dependency>
+        <!--
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-eureka</artifactId>
             <version>1.0.1.RELEASE</version>
         </dependency>
+        -->
     </dependencies>
 
     <build>

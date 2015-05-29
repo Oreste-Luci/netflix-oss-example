@@ -107,18 +107,14 @@ More information can be found [here] (http://cloud.spring.io/spring-cloud-config
 There is an endpoint in the microservices to refresh the changes in the configuration file. A POST request must be issued ```/refresh``` endpoint. 
 
 ```ShellSession
-curl -X POST http://localhost:<port>/admin/refresh
+curl -X POST http://localhost:<port>/refresh
 ```
 
 To refresh all services at once ```spring cloud bus``` adds a ```/bus/refresh``` endpoint to the microservices. If this endpoint is called it will send refresh message to all the
 microservices via RabbitMQ. For this to work RabbitMQ must be running. For example:  
 
 ```ShellSession
-curl -X POST http://localhost:<port>/admin/bus/refresh
+curl -X POST http://localhost:<port>/bus/refresh
 ```
 
 More info [here](http://cloud.spring.io/spring-cloud-config/spring-cloud-config.html)
-
-> NOTE:
-> Here we are using ```/admin``` in as the Actuator prefix because it has been configured so in the ```application.yml``` file. 
-If no admin context is configured then the Actuator enpoints start from the root context ```/```. 

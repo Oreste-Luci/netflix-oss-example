@@ -154,7 +154,7 @@ The output is something like this:
 The hystrix library creates and endpoint which has the status of each of the calls. This stream is ment to be used with the Hystrix Dashboard.
 
 ```
-http://localhost:<port>/admin/hystrix.stream
+http://localhost:<port>/hystrix.stream
 ```
 
 ##Hystrix Dashboard
@@ -172,7 +172,7 @@ You should see something like this:
 Here you must enter the URL for the service Hystrix stream, ie:
 
 ```
-http://localhost:<port>/admin/hystrix.stream
+http://localhost:<port>/hystrix.stream
 ```
 
 You should see the graphs for all the Hystrix enabled methods in the service. For example:

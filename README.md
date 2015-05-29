@@ -4,7 +4,7 @@
 
 This repo contains an example of Sping cloud (Netflix OSS) micro-services architecture.
 
-The main objective is to test how the spring cloud ecosystem. The following image shows the different components of this example:
+The main objective is to understand the spring cloud ecosystem. The following image shows the different components of this example:
 
 ![Netflix OSS Example](https://github.com/Oreste-Luci/netflix-oss-example/blob/master/netflix-oss-example.png?raw=true)
 

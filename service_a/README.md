@@ -51,7 +51,7 @@ To test the setup you must have running Eureka, Config Service, Service B and Se
 The following command will call service A which will in turn call Service B who will use the Configuration Service to pre-append a message to the inpur string from Service A.
 
 ```
-crl http://localhost:9090/feign | jq .
+curl http://localhost:9090/feign | jq .
 ```
 
 You should see a response like this one:
@@ -70,7 +70,7 @@ You can call service A and you will see in the console output for services B the
 You should see a Round Robin (default Ribbon balancing algorithm) call to services B.
 
 ```
-crl http://localhost:9090/feign | jq .
+curl http://localhost:9090/feign | jq .
 ```
 
 If you kill (kill -9) one of services B you will see that Feign call skips (retries with the next one) if one of the server instances is down. 

@@ -9,7 +9,7 @@ The main objective is to understand the spring cloud ecosystem. The following im
 ![Netflix OSS Example](https://github.com/Oreste-Luci/netflix-oss-example/blob/master/netflix-oss-example.png?raw=true)
 
  
-The main parts are:
+The main parts are (they each have a readme.md with more details):
 
 1. [Eureka] (https://github.com/Oreste-Luci/netflix-oss-example/tree/master/eureka-server)
 2. [Config Service] (https://github.com/Oreste-Luci/netflix-oss-example/tree/master/config-service)

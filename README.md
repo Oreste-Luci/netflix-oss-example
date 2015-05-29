@@ -37,4 +37,4 @@ There is further documentation for each component in the links above.
 
 
 > **Note:**
-> This example is using Spring Boot version 1.2.3.RELEASE and Spring Cloud version 1.0.0.RELEASE.
+> This example is using Spring Boot version 1.2.3.RELEASE and Spring Cloud version 1.0.0.RELEASE because there were some issues in Feign with the latest Spring Cloud version.

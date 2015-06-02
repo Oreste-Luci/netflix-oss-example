@@ -10,3 +10,7 @@ info:
 spring:
   application:
     name: Spring-Cloud-Dashboard
+  cloud:
+    dashboard:
+      turbine:
+        url: http://localhost:8989/turbine.stream

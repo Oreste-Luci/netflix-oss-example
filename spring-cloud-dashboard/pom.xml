@@ -34,6 +34,11 @@
             <artifactId>spring-cloud-starter-eureka</artifactId>
             <version>${spring-cloud-starter-eureka.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+            <version>${spring-boot-starter-actuator.version}</version>
+        </dependency>
     </dependencies>
 
     <build>

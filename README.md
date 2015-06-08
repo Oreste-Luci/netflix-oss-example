@@ -1,4 +1,4 @@
-#Netflix OSS Example
+#Spring Cloud - Netflix OSS Example
 
 ##Introduction
 

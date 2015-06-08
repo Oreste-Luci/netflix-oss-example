@@ -1,0 +1,21 @@
+#
+# Dockerfile for Config Service
+#
+
+FROM java:8
+
+MAINTAINER Oreste Luci
+
+# Install maven
+RUN apt-get update
+
+VOLUME /tmp
+
+WORKDIR /config-service
+
+ADD target/config-service.jar config-service.jar
+
+RUN bash -c 'touch /config-service.jar'
+
+EXPOSE 8761
+CMD ["/usr/lib/jvm/java-8-openjdk-amd64/bin/java", "-jar", "config-service.jar"]

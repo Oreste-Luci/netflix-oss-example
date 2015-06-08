@@ -22,3 +22,11 @@ spring:
 #      discovery:
 #        enabled: true
 #        serviceId: CONFIG-SERVICE
+
+---
+
+spring:
+  profiles: docker
+  cloud:
+    config:
+      uri: http://config-service-docker:8888

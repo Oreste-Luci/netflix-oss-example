@@ -14,3 +14,11 @@ spring:
     config:
       failFast: true  # Will not start service if no config server found
       uri: http://localhost:8888 # Location of config server (needed if discovery.enabled=false)
+
+---
+
+spring:
+  profiles: docker
+  cloud:
+    config:
+      uri: http://config-service-docker:8888

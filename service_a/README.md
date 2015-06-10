@@ -76,3 +76,30 @@ curl http://localhost:9090/feign | jq .
 If you kill (kill -9) one of services B you will see that Feign call skips (retries with the next one) if one of the server instances is down. 
 If you do the same with the ```/restTemplate2``` call you will see an exception in the service A console output, since in this case the call is not retried to a live server.
 
+##Docker
+
+Docker images can be created to test deploying the server into a different environment. The script to create the Docker image is contained in the Dockerfile.
+ 
+###To create the image
+
+The following commands creates the latest jar file and creates a Docker image called ```service-a```.
+
+```
+mvn clean package
+docker build -t service-a .
+```
+
+###To run the container
+
+The following command starts a new container named ```service-a``` from the ```service-a``` image. It maps port 9091 so that it can be reachable.
+
+```
+docker run -p 9091:9091 -d --name service-a -e "spring.profiles.active=docker" --add-host eureka-server-docker:<eureka server ip>  --add-host config-service-docker:<config service ip> service-a
+```
+
+To find out the ip of the eureka cand config service you can use the following command:
+ 
+```
+docker inspect <container name>
+```
+ 

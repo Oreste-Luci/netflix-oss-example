@@ -118,3 +118,24 @@ curl -X POST http://localhost:<port>/bus/refresh
 ```
 
 More info [here](http://cloud.spring.io/spring-cloud-config/spring-cloud-config.html)
+
+##Docker
+
+Docker images can be created to test deploying the server into a different environment. The script to create the Docker image is contained in the Dockerfile.
+ 
+###To create the image
+
+The following commands creates the latest jar file and creates a Docker image called ```config-service```.
+
+```
+mvn clean package
+docker build -t config-service .
+```
+
+###To run the container
+
+The following command starts a new container named ```config-service``` from the ```config-service``` image. It maps port 8888 so that it can be reachable.
+
+```
+docker run -p 8888:8888 -d --name config-service config-service
+```

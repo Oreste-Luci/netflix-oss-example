@@ -218,6 +218,32 @@ This will display the info that has been added in the properties files served by
 You can find more about actuator and all the endpoints it has [here] (http://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#production-ready).
 
 
+##Docker
 
+Docker images can be created to test deploying the server into a different environment. The script to create the Docker image is contained in the Dockerfile.
+ 
+###To create the image
+
+The following commands creates the latest jar file and creates a Docker image called ```service-b```.
+
+```
+mvn clean package
+docker build -t service-b .
+```
+
+###To run the container
+
+The following command starts a new container named ```service-b``` from the ```service-b``` image. It maps port 9092 so that it can be reachable.
+
+```
+docker run -p 9092:9092 -d --name service-b -e "spring.profiles.active=docker" --add-host eureka-server-docker:<eureka server ip>  --add-host config-service-docker:<config service ip> service-b
+```
+
+To find out the ip of the eureka cand config service you can use the following command:
+ 
+```
+docker inspect <container name>
+```
+ 
 
 

@@ -1,10 +1,8 @@
-#Netflix OSS Example - Service C
+#Netflix OSS Example - Client Traffic generator
 
 ##Introduction
 
-This is a very simple micro-service that simple echoes back the received message pre-appending a string obtained from the config repository.
-
-The purpose of this service is to server as a server to micro-service A. To test load balancing features you can instantiate this service multiple times, the auto port configuration will assign different ports.
+This is a very simple micro-service that simple make 198 calls to [ServiceA](https://github.com/Oreste-Luci/netflix-oss-example/tree/master/service_b) with random sleep intervals
 
 ##Quick Start
  
@@ -17,28 +15,13 @@ mvn clean package
 To execute:
  
 ```ShellSession
-java -jar target/service-c.jar
+java -jar target/client-traffic-generator.jar
 ```
  
-This will start the microservice B in an automatically assigned port and register it with eureka. To check if it has been successfully registered with eureka check the eureka status page:
+This will start the microservice client traffic generator in an automatically assigned port and register it with eureka, and will launch the request randomly
  
-```
-http://localhost:8761/
-```
- 
-To test the service you can do the following 
- 
-```ShellSession
-curl http://localhost:<replace_with_service_port>/echo\?msg\=Hello | jq .
-```
- 
-You should see the following output:
- 
-```json
-{
-  "message": "From local file Hello"
-}
-```
+To see this module working open the [Spring cloud dashboard](https://github.com/Oreste-Luci/netflix-oss-example/tree/master/spring-cloud-dashboard) and click on a registered application's circuit breaking graphic.
+
  
 ##Configuration
 
@@ -87,18 +70,18 @@ The following commands creates the latest jar file and creates a Docker image ca
 
 ```
 mvn clean package
-docker build -t service-c .
+docker build -t client-traffic-generator .
 ```
 
 ###To run the container
 
-The following command starts a new container named ```service-c``` from the ```service-c``` image. It maps port 9093 so that it can be reachable.
+The following command starts a new container named ```client-traffic-generator``` from the ```client-traffic-generator``` image. It maps port 9094 so that it can be reachable.
 
 ```
-docker run -p 9093:9093 -d --name service-c -e "spring.profiles.active=docker" -e "server.port=9093" --add-host eureka-server-docker:<eureka server ip>  --add-host config-service-docker:<config service ip> service-c
+docker run -p 9094:9094 -d --name client-traffic-generator -e "spring.profiles.active=docker" --add-host eureka-server-docker:<eureka server ip>  --add-host config-service-docker:<config service ip> client-traffic-generator
 ```
 
-To find out the ip of the eureka cand config service you can use the following command:
+To find out the ip of the eureka can config service you can use the following command:
  
 ```
 docker inspect <container name>

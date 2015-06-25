@@ -6,8 +6,8 @@ FROM java:8
 
 MAINTAINER Oreste Luci
 
-# Install maven
-RUN apt-get update
+# Install netcat
+RUN apt-get update && apt-get install -y netcat
 
 VOLUME /tmp
 

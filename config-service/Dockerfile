@@ -6,8 +6,8 @@ FROM java:8
 
 MAINTAINER Oreste Luci
 
-# Install maven
-RUN apt-get update
+# Install netcat
+RUN apt-get update && apt-get install -y netcat
 
 VOLUME /tmp
 
@@ -17,5 +17,5 @@ ADD target/config-service.jar config-service.jar
 
 RUN bash -c 'touch /config-service.jar'
 
-EXPOSE 8761
+EXPOSE 8888
 CMD ["/usr/lib/jvm/java-8-openjdk-amd64/bin/java", "-jar", "config-service.jar"]

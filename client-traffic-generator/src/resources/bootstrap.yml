@@ -3,14 +3,14 @@ server:
   port: 0
 
 info:
-  name: "Service C"
+  name: "Service Traffic generator"
 
 #
 # Use valid URI characters (eg: do not use _ in names)
 #
 spring:
   application:
-    name: serviceC
+    name: serviceTrafficGenerator
   cloud:
     config:
       failFast: true  # Will not start service if no config server found

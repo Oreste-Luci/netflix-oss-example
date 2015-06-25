@@ -94,7 +94,7 @@ docker build -t service-a .
 The following command starts a new container named ```service-a``` from the ```service-a``` image. It maps port 9091 so that it can be reachable.
 
 ```
-docker run -p 9091:9091 -d --name service-a -e "spring.profiles.active=docker" --add-host eureka-server-docker:<eureka server ip>  --add-host config-service-docker:<config service ip> service-a
+docker run -p 9091:9091 -d --name service-a -e "spring.profiles.active=docker" -e "server.port=9091" --add-host eureka-server-docker:<eureka server ip>  --add-host config-service-docker:<config service ip> service-a
 ```
 
 To find out the ip of the eureka cand config service you can use the following command:

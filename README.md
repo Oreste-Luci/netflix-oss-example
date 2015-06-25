@@ -20,6 +20,8 @@ The main parts are (they each have a readme.md with more details):
 7. [Microservice A: This is the client micro-service] (https://github.com/Oreste-Luci/netflix-oss-example/tree/master/service_a)
 8. [Zuul](https://github.com/Oreste-Luci/netflix-oss-example/tree/master/zuul)
 9. [Spring Cloud Dashboard](https://github.com/Oreste-Luci/netflix-oss-example/tree/master/spring-cloud-dashboard)
+10. [RabbitMq](http://www.rabbitmq.com) for histryx stats aggregator    
+11. [Docker Compose](https://github.com/Oreste-Luci/netflix-oss-example/tree/master/docker-compose)
 
 The services can be started in any other but it recommended to start them in above order.
 

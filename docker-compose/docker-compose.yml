@@ -1,0 +1,98 @@
+###############################################################
+### Default configuration for development environment.      ###
+### In test/production this file will be used but will be   ###
+### extended with tes.yml or production.yml                 ###
+###############################################################
+
+eureka:
+    build: ../eureka-server
+    ports:
+     - "8761:8761"
+
+hystrixdashboard:
+    build: ../hystrix-dashboard
+    links:
+     - turbine:turbine-server
+    ports:
+     - "7979:7979"
+
+configservice:
+    build: ../config-service
+    expose:
+     - "8888"
+    ports:
+     - "8888:8888"
+
+#springbootadmin:
+#    build: ../spring-boot-admin
+#    ports:
+#     - "8085:8085"
+
+springclouddashboard:
+    build: ../spring-cloud-dashboard
+    environment:
+     - spring.profiles.active=docker
+    links:
+     - eureka:eureka-server-docker
+     - turbine:turbine-url
+     - configservice:config-service-docker
+    ports:
+     - "8086:8086"
+
+turbine:
+    build: ../turbine
+    environment:
+     - spring.profiles.active=docker
+    links:
+     - configservice:config-service-docker
+     - rabbitmq:rabbit-mq-server
+    ports:
+     - "8989:8989"
+
+zuul:
+    build: ../zuul
+    ports:
+     - "8765:8765"
+
+rabbitmq:
+    image: rabbitmq:3.5.3-management
+    expose:
+     - "5672"
+    ports:
+     - "5672:5672"
+
+servicea:
+    build: ../service_a
+    environment:
+     - spring.profiles.active=docker
+    links:
+     - configservice:config-service-docker
+     - eureka:eureka-server-docker
+     - rabbitmq:rabbit-mq-server
+
+serviceb:
+    build: ../service_b
+    environment:
+     - spring.profiles.active=docker
+    links:
+     - configservice:config-service-docker
+     - eureka:eureka-server-docker
+     - rabbitmq:rabbit-mq-server
+
+servicec:
+    build: ../service_c
+    environment:
+      - spring.profiles.active=docker
+    links:
+     - configservice:config-service-docker
+     - eureka:eureka-server-docker
+     - rabbitmq:rabbit-mq-server
+
+clienttrafficgenerator:
+    build: ../client-traffic-generator
+    environment:
+     - spring.profiles.active=docker
+    links:
+     - configservice:config-service-docker
+     - eureka:eureka-server-docker
+     - rabbitmq:rabbit-mq-server

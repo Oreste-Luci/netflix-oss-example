@@ -175,6 +175,10 @@ Here you must enter the URL for the service Hystrix stream, ie:
 http://localhost:<port>/hystrix.stream
 ```
 
+> **Note:**
+> If you are starting your turbine service with docker you must pass the URL of the container that is linked with an alias ```http://turbine-server:<port>/hystrix.stream```.
+> Or instead search for the container ip's adress with ```docker ps -q | xargs docker inspect --format '{{ .Id }} - {{ .Name }} - {{ .NetworkSettings.IPAddress }}'```
+
 You should see the graphs for all the Hystrix enabled methods in the service. For example:
 
 ![Hystrix Home](https://github.com/Oreste-Luci/netflix-oss-example/blob/master/hystrix-dashboard/hystrix_A.png?raw=true)

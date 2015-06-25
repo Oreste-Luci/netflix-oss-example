@@ -11,14 +11,14 @@ RUN apt-get update && apt-get install -y netcat
 
 VOLUME /tmp
 
-WORKDIR /turbine
+WORKDIR /spring-cloud-dashboard
 
-ADD target/turbine.jar turbine.jar
+ADD target/spring-cloud-dashboard.jar spring-cloud-dashboard.jar
 
-RUN bash -c 'touch /turbine.jar'
+RUN bash -c 'touch /spring-cloud-dashboard.jar'
 
 ADD run.sh run.sh
 RUN chmod 744 run.sh
 
-EXPOSE 8989
-CMD ["./run.sh","turbine.jar"]
+EXPOSE 8086
+CMD "./run.sh"

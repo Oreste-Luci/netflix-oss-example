@@ -6,8 +6,8 @@ FROM java:8
 
 MAINTAINER Oreste Luci
 
-# Install maven
-RUN apt-get update
+# Install netcat
+RUN apt-get update && apt-get install -y netcat
 
 VOLUME /tmp
 
@@ -17,5 +17,7 @@ ADD target/service-b.jar service-b.jar
 
 RUN bash -c 'touch /service-b.jar'
 
-EXPOSE 9092
-CMD ["/usr/lib/jvm/java-8-openjdk-amd64/bin/java", "-jar", "service-b.jar", "--server.port=9092"]
+ADD run.sh run.sh
+RUN chmod 744 run.sh
+
+CMD ["./run.sh","service-b.jar"]

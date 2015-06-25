@@ -25,6 +25,7 @@
         <module>zuul</module>
         <module>spring-boot-admin</module>
         <module>spring-cloud-dashboard</module>
+        <module>client-traffic-generator</module>
     </modules>
 
     <properties>

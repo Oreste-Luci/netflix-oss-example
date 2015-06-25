@@ -22,3 +22,5 @@ spring:
   cloud:
     config:
       uri: http://config-service-docker:8888
+  rabbitmq:
+    addresses: rabbit-mq-server:5672

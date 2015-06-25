@@ -49,7 +49,7 @@ The response should be something like this:
 ```
 
 ##Hystrix Console
-
+    
 The ```org.springframework.cloud:spring-cloud-netflix-hystrix-amqp``` has been added to the pom.xml, this means that Hystrix stream will be added to RabbitMQ so that
 Turbine can aggregate it to the stream to be used in Hystrix Dashboard.
 

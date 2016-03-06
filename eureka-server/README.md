@@ -1,6 +1,6 @@
-#Netflix OSS Example - Eureka
+# Spring Cloud - Netflix OSS Eureka
 
-##Introduction
+## Introduction
 
 This module creates an Eureka server to be used by the services. By default it it configures to run in localhost.
 

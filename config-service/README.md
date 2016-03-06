@@ -2,7 +2,7 @@
 
 ##Introduction
 
-This sevice will keep the configuration to be read by the micro-services. The objective is to have one centralized place to store the configuration.
+This service will keep the configuration to be read by the micro-services. The objective is to have one centralized place to store all the configuration.
 
 ##Quick Start
 

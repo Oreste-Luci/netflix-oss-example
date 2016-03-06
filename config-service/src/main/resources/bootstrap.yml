@@ -7,8 +7,6 @@ info:
 spring:
   application:
     name: config-service
-#  profiles:
-#    active: native  # For local file repository only
   cloud:
     config:
       enabled: true

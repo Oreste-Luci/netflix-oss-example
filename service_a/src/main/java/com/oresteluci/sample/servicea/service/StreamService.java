@@ -1,6 +1,7 @@
 package com.oresteluci.sample.servicea.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.cloud.stream.annotation.Output;
 import org.springframework.cloud.stream.messaging.Source;
 import org.springframework.messaging.MessageChannel;
@@ -13,6 +14,7 @@ import java.util.UUID;
  * @author Oreste Luci
  */
 @Service
+@EnableBinding(Source.class)
 public class StreamService {
 
     @Autowired

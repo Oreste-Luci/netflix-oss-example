@@ -17,6 +17,9 @@ spring:
       env: default # optional
       label: master # optional
       uri: http://localhost:8888 # Location of config server (needed if discovery.enabled=false)
+    stream:
+      bindings:
+        input: springcloudstream
 
 # Discovery has an issue https://github.com/spring-cloud/spring-cloud-config/issues/93
 #      discovery:

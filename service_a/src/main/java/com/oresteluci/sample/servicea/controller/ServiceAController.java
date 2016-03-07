@@ -4,6 +4,7 @@ import com.oresteluci.sample.servicea.bean.MessageBean;
 import com.oresteluci.sample.servicea.service.DiscoveryClientService;
 import com.oresteluci.sample.servicea.service.FeignService;
 import com.oresteluci.sample.servicea.service.RestTemplateService;
+import com.oresteluci.sample.servicea.service.StreamService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,6 +29,9 @@ public class ServiceAController {
 
     @Autowired
     private FeignService feignService;
+
+    @Autowired
+    private StreamService streamService;
 
     private final AtomicLong counter = new AtomicLong();
 
@@ -81,4 +85,13 @@ public class ServiceAController {
         return feignService.feignClient();
     }
 
+    @RequestMapping(
+            value = "/stream",
+            method= RequestMethod.GET
+    )
+    public String sendStreamMessage() {
+        System.out.println(counter.incrementAndGet() + ". ServiceBController.sendStreamMessage");
+        streamService.sendMessage();
+        return "";
+    }
 }

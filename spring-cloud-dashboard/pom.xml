@@ -10,17 +10,18 @@
     <packaging>jar</packaging>
 
     <name>Spring Cloud Dashboard</name>
-    <description>Spring Cloud Dashboard Eureka Remote</description>
+    <description>Spring Cloud Dashboard Demo</description>
 
     <parent>
-        <groupId>netflix-oss-example</groupId>
-        <artifactId>microservices-example</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
-        <relativePath>../pom.xml</relativePath>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-starter-parent</artifactId>
+        <version>Angel.SR6</version>
+        <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
     <properties>
-        <start-class>spring_cloud.dashboard.boot.SpringCloudDashboardApp</start-class>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.8</java.version>
     </properties>
 
     <dependencies>
@@ -32,17 +33,15 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-eureka</artifactId>
-            <version>${spring-cloud-starter-eureka.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
-            <version>${spring-boot-starter-actuator.version}</version>
         </dependency>
     </dependencies>
 
     <build>
-        <finalName>spring-cloud-dashboard</finalName>
+        <finalName>${project.artifactId}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

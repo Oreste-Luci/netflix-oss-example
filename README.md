@@ -23,7 +23,7 @@ The main parts are (they each have a readme.md with more details):
 10. [RabbitMq](http://www.rabbitmq.com) for histryx stats aggregator    
 11. [Docker Compose](https://github.com/Oreste-Luci/netflix-oss-example/tree/master/docker-compose)
 
-The services can be started in any other but it recommended to start them in above order.
+The services can be started in any other but it recommended to start them in above order, specially Eureka and the Configuration Service since they are used when the other services are booting up.
 
 Service A exposes endpoints that in turn call service B endpoints and service B will call service C endpoints. The client services find the server services via Eureka.
 
@@ -39,4 +39,4 @@ There is further documentation for each component in the links above.
 
 
 > **Note:**
-> This example is using Spring Boot version 1.2.3.RELEASE and Spring Cloud version 1.0.0.RELEASE because there were some issues in Feign with the latest Spring Cloud version.
+> This example is using mainly Spring Cloud version `Angel.SR6` and `Brixton.M5` for Spring Cloud Stream.

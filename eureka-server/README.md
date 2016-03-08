@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This module creates an Eureka server to be used by the services. By default it it configures to run in localhost.
+This module creates an Eureka server to be used by the services.
 
 ##Quick Start
 
@@ -29,13 +29,11 @@ Once the Eureka service is running it is ready to accept the registration of oth
 
 ##Configuration
 
-The configuration is split up in two files.
+Since the Eureka Service is a spring boot application, the configuration can be placed in the `bootstrap.yml` file. 
 
 ###bootstrap.yml
 
 This is the first file that is read by the application when it starts. Here we configure the name of the application.
-
-###application.yml
 
 In this file we place the configuration for the Eureka server. Things like the port it should use, whether it should register itself as a service, etc. More information can be found here [Netflix Eureka](https://github.com/Netflix/eureka).
 
@@ -45,7 +43,7 @@ Docker images can be created to test deploying the server into a different envir
  
 ###To create the image
 
-The following commands creates the latest jar file and creates a Docker image called ```eureka-server```.
+The following commands creates the latest jar file and creates a Docker image called `eureka-server`.
 
 ```
 mvn clean package

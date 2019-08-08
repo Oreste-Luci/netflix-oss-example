@@ -1,6 +1,6 @@
-#Spring Cloud - Netflix OSS Example
+# Spring Cloud - Netflix OSS Example
 
-##Introduction
+## Introduction
 
 This repo contains an example of Sping cloud (Netflix OSS) micro-services architecture.
 
@@ -29,7 +29,7 @@ Service A exposes endpoints that in turn call service B endpoints and service B 
 
 There is further documentation for each component in the links above.
 
-##Further Reading
+## Further Reading
 
 * [Spring Cloud] (http://projects.spring.io/spring-cloud/spring-cloud.html)
 * [Dynamic configuration management with Spring Cloud Config] (http://qiita.com/making@github/items/704d8e254e03c5cce546)
